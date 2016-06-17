@@ -1,4 +1,29 @@
 # reagent example
+## Binding the form to a document
+```clj
+(defn row [label input]
+  [:div.row
+   [:div.col-md-2 [:label label]]
+   [:div.col-md-5 input]])
+
+(def form-template
+  [:div
+   (row "first name" [:input {:field :text :id :first-name}])
+   (row "last name" [:input {:field :text :id :last-name}])
+   (row "age" [:input {:field :numeric :id :age}])
+   (row "email" [:input {:field :email :id :email}])
+   (row "comments" [:textarea {:field :textarea :id :comments}])])
+
+(defn test-page []
+  (let [doc (r/atom {})]
+    (fn []
+      [:div
+       [:div.page-header [:h1 "Reagent Form"]]
+       [bind-fields form-template doc]
+       [:label (str (:first-name @doc))]])))
+```
+
+
 ## jQuery autocomplet example
 
 In the `index.html` file, we add the jQuery files.
