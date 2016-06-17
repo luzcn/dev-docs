@@ -23,6 +23,33 @@
        [:label (str (:first-name @doc))]])))
 ```
 
+## Radio button example
+```cljs
+(defn form []
+  (let [val (r/atom "Test ")]
+    (fn []
+      [:div
+       [:div.page-header "The binding value will be changed here:" @val]
+       [:label
+        [:input {:type :radio
+                 :value :v1
+                 :name :foo
+                 :id :rd1
+                 :on-change #(reset! val (-> % .-target .-value))}] "foo"]
+       [:label
+        [:input {:type :radio
+                 :value :v2 :name
+                 :foo :id :rd2
+                 :on-change #(reset! val (-> % .-target .-value))}] "bar"]
+       [:label
+        [:input {:type :radio
+                 :value :v3
+                 :name :foo
+                 :id :rd3
+                 :on-change #(reset! val (-> % .-target .-value))}] "baz"]])))
+
+```
+
 
 ## jQuery autocomplet example
 
