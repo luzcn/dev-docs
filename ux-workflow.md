@@ -14,7 +14,7 @@ verify/test the correctness.
 ### The workflow of send out code review to *Phaboricator* 
 ```
 Git add .
-Git commit -m “”
+Git commit -m "<Your commit message>"
 Git pull --rebase
 arc diff HEAD^
 
