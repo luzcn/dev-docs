@@ -25,6 +25,11 @@ https://confluence.aka.lgl.grungy.us/display/UX/Development
 ### REPL useful commands
 - view the global application state
 ```clj
+(use 'figwheel-sidecar.repl-api)
+(cljs-repl)
+
 (require '[hg.client.re-frame :as re-frame])
 (re-frame/app-db)
+
+(-> @re-frame.db/app-db :viewstack)
 ```
