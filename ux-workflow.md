@@ -12,10 +12,10 @@ verify/test the correctness.
 `git br <branch name>` will always track `master`
 
 ### The workflow of send out code review to *Phaboricator* 
-```
-Git add .
-Git commit -m "<Your commit message>"
-Git pull --rebase
+```git
+git add .
+git commit -m "<Your commit message>"
+git pull --rebase
 arc diff HEAD^
 
 arc summary pattern
