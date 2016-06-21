@@ -29,7 +29,5 @@ https://confluence.aka.lgl.grungy.us/display/UX/Development
 (cljs-repl)
 
 (require '[hg.client.re-frame :as re-frame])
-(re-frame/app-db)
-
 (-> @re-frame.db/app-db :viewstack)
 ```
