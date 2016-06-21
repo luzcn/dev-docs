@@ -33,4 +33,31 @@ touch cljs/example.cljs
 touch resources/index.html
 ```
 - update the `example.cljs`
-- 
+```cljs
+(defn simple-component []
+      [:div
+       [:p "I am a component!"]
+       [:p.someclass
+        "I have " [:strong "bold"]
+        [:span {:style {:color "red"}} " and red "] "text."]])
+
+(defn ^:export run[]
+      (r/render [to-do] (js/document.getElementById "app")))
+```
+
+- update `index.html` as:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+</head>
+<body>
+<div id="app">
+    <script type="text/javascript" src="./core.js"></script>
+    <script>cljs.example.run()</script>
+</div>
+</body>
+</html>
+```
