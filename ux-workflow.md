@@ -27,7 +27,7 @@ https://confluence.aka.lgl.grungy.us/display/UX/Development
 ```clj
 (use 'figwheel-sidecar.repl-api)
 (cljs-repl)
-
 (require '[hg.client.re-frame :as re-frame])
+
 (-> @re-frame.db/app-db :viewstack)
 ```
