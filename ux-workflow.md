@@ -31,3 +31,9 @@ https://confluence.aka.lgl.grungy.us/display/UX/Development
 
 (-> @re-frame.db/app-db :viewstack)
 ```
+
+### debug 
+use `log/debug` to print out
+```clj
+  (log/debug "Resource Result:" (println-str @result))
+```
