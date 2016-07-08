@@ -35,7 +35,11 @@
   []
   (let [phones (re-frame/subscribe [:phones])] ; subscribe to the phones value in our db
     (fn []
-      [:ul (for [phone @phones] ^{:key phone} [phone-component phone])])))
+      (for [phone @phones]
+        ^{:key phone}
+        [:ul [phone-component phone]]))))
+    
+      ;; [:ul (for [phone @phones] ^{:key phone} [phone-component phone])])))
 
 (defn test-page []
   [:div
