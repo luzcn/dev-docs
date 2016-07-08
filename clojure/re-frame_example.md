@@ -23,23 +23,16 @@
             {:name "Nexus S 2" :snippet "THe phone details sdf"}]}))
 
 
-(defn phone-component [phone]
-  [:li
-   [:span (:name phone)]
-   [:p (:snippet phone)]])
-
-;[:ul (for [phone in @phones] ^{:key phone} [phone-component phone] @phones)]
-
-
 (defn phones-component
   []
   (let [phones (re-frame/subscribe [:phones])] ; subscribe to the phones value in our db
     (fn []
       (for [phone @phones]
         ^{:key phone}
-        [:ul [phone-component phone]]))))
-    
-      ;; [:ul (for [phone @phones] ^{:key phone} [phone-component phone])])))
+        [:ul 
+          [:li
+            [:span (:name phone)]
+            [:p (:snippet phone)]]]))))
 
 (defn test-page []
   [:div
