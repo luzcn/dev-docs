@@ -1,4 +1,18 @@
-# reagent example
+## create reagent project
+To create a new Reagent project simply run:
+```
+lein new reagent <project name>
+```
+If you wish to only create the assets for ClojureScript without a Clojure backend then do the following instead:
+```
+lein new reagent-frontend <project name>
+```
+If you want to create a SVG with reagent, you can use
+```
+lein new figwheel <project name> -- --reagent
+```
+
+## reagent example
 ## Binding the form to a document
 ```clj
 (defn row [label input]
