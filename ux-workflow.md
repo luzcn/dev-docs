@@ -1,9 +1,11 @@
 # The UX team work notes
 
 ### Build lein css/cljs
-- lein clean
-- lein css
-- lein cljsbuild once
+```bash
+ lein clean
+ lein css
+ lein cljsbuild once
+```
 verify/test the correctness.
 
 ### Create and config the local git branch 
