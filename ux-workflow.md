@@ -10,6 +10,8 @@ compile locally to catch any optimization errors
 ```
 lein ring uberjar
 ```
+> " what I do after doing a git pull on master (then arc patch DXXXX, if needed) is lein do clean, css, uberjar and make sure to look at the optimizer output (starts with: Applying optimizations :advanced to 373 sources, ends with: Successfully compiled "resources/public/js/gen/hg.js" in 91.026 seconds.)  look for the line "WARNING: 5 error(s), 1 warning(s)" if the N error(s) number is anything but 0 then the .js is broken, meaning the build is broken."
+
 
 verify/test the correctness.
 
