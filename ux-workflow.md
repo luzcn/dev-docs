@@ -6,6 +6,11 @@
  lein css
  lein cljsbuild once
 ```
+compile locally to catch any optimization errors
+```
+lein ring uberjar
+```
+
 verify/test the correctness.
 
 ### Create and config the local git branch 
