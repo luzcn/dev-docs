@@ -51,3 +51,6 @@ use `log/debug` to print out
 ```clj
   (log/debug "Resource Result:" (println-str @result))
 ```
+
+### artifacts 
+use this [link](http://artifactoryui.oraclecorp.com/artifactory/webapp/#/artifacts/browse/tree/search/package/eyJxdWVyeSI6eyJzZWFyY2giOiJnYXZjIiwiZ3JvdXBJRCI6ImNvbS5vcmFjbGUucGljLmNvbW1vbnMiLCJhcnRpZmFjdElEIjoiY29yZXNlcnZpY2VzLWFwaS1zcGVjIiwic2VsZWN0ZWRSZXBvc2l0b3JpZXMiOltdfSwic2VsZWN0ZWRQYWNrYWdlVHlwZSI6eyJpZCI6ImdhdmMiLCJkaXNwbGF5TmFtZSI6IkdBVkMiLCJpY29uIjoicG9tIn0sInNlbGVjdGVkUmVwb3NpdG9yaWVzIjpbXSwiY29sdW1ucyI6WyJhcnRpZmFjdCIsImdyb3VwSUQiLCJhcnRpZmFjdElEIiwidmVyc2lvbiIsImNsYXNzaWZpZXIiLCJyZXBvIiwicGF0aCIsIm1vZGlmaWVkIl19) to review the service-api spec.
