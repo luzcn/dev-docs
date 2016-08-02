@@ -23,4 +23,4 @@
 
 (def data [{:name "n" :value "n"} {:name "m" :value "m"}])
 
-(keep-indexed (fn[idx item] (merge {:id idx} item)) data)
+(map-indexed (fn[idx item] (merge {:id idx} item)) data)
