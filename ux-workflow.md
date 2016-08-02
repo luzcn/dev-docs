@@ -6,6 +6,13 @@
  lein css
  lein cljsbuild once
 ```
+compile locally to catch any optimization errors
+```
+lein ring uberjar
+```
+> " what I do after doing a git pull on master (then arc patch DXXXX, if needed) is lein do clean, css, uberjar and make sure to look at the optimizer output (starts with: Applying optimizations :advanced to 373 sources, ends with: Successfully compiled "resources/public/js/gen/hg.js" in 91.026 seconds.)  look for the line "WARNING: 5 error(s), 1 warning(s)" if the N error(s) number is anything but 0 then the .js is broken, meaning the build is broken."
+
+
 verify/test the correctness.
 
 ### Create and config the local git branch 
@@ -44,3 +51,6 @@ use `log/debug` to print out
 ```clj
   (log/debug "Resource Result:" (println-str @result))
 ```
+
+### artifacts 
+use this [link](http://artifactoryui.oraclecorp.com/artifactory/webapp/#/artifacts/browse/tree/search/package/eyJxdWVyeSI6eyJzZWFyY2giOiJnYXZjIiwiZ3JvdXBJRCI6ImNvbS5vcmFjbGUucGljLmNvbW1vbnMiLCJhcnRpZmFjdElEIjoiY29yZXNlcnZpY2VzLWFwaS1zcGVjIiwic2VsZWN0ZWRSZXBvc2l0b3JpZXMiOltdfSwic2VsZWN0ZWRQYWNrYWdlVHlwZSI6eyJpZCI6ImdhdmMiLCJkaXNwbGF5TmFtZSI6IkdBVkMiLCJpY29uIjoicG9tIn0sInNlbGVjdGVkUmVwb3NpdG9yaWVzIjpbXSwiY29sdW1ucyI6WyJhcnRpZmFjdCIsImdyb3VwSUQiLCJhcnRpZmFjdElEIiwidmVyc2lvbiIsImNsYXNzaWZpZXIiLCJyZXBvIiwicGF0aCIsIm1vZGlmaWVkIl19) to review the service-api spec.
