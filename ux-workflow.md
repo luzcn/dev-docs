@@ -33,8 +33,9 @@ arc diff HEAD^
 arc summary pattern
 [https://confluence.aka.lgl.grungy.us/display/UX/Development](https://confluence.aka.lgl.grungy.us/display/UX/Development)
 
-### Develop on R2 if R0 is down
-`CONFIGS=base,dev-r2 lein figwheel`
+### Specify a custom config
+Develop on R2 if R0 is down: `CONFIGS=base,dev-r2 lein figwheel`
+Test in integ-next: `CONFIGS=base,dev-r0-next lein figwheel`
 
 ### REPL useful commands
 - view the global application state
