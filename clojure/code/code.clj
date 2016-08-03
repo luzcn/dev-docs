@@ -23,4 +23,12 @@
 
 (def data [{:name "n" :value "n"} {:name "m" :value "m"}])
 
+;; example to use map-indexed
 (map-indexed (fn[idx item] (merge {:id idx} item)) data)
+
+;; assoc/assoc-in example
+(-> {:name "T" :value 1} (assoc :debug false))
+=> {:name "T", :value 1, :debug false}
+
+(-> {:name "T" :value {:value 1}} (assoc-in [:value :debug] false))
+=> {:name "T", :value {:value 1, :debug false}}
