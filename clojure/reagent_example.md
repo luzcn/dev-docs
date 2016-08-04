@@ -12,7 +12,45 @@ If you want to create a SVG with reagent, you can use
 lein new figwheel <project name> -- --reagent
 ```
 
-## reagent example
+# reagent example
+
+## BMI Calculator
+```cljs
+; BMI calculator
+(def bmi-data (r/atom {:height 180 :weight 80 :bmi nil}))
+
+(defn calc-bmi []
+  (letk [[height weight] @bmi-data
+         h (/ height 100)]
+    (swap! bmi-data assoc :bmi (/ weight (* h h))))
+  bmi-data)
+
+(defn slider [param value min max]
+  [:input {:type "range" :value value :min min :max max
+           :style {:width "100%"}
+           :on-change (fn [e] ((swap! bmi-data assoc param (.-target.value e))))}])
+
+
+(defn bmi-component []
+  (letk [[height weight bmi] @(calc-bmi)
+         [color diagnose] (cond
+                            (< bmi 18.5) {:color "orange" :diagnose "underweight"}
+                            (< bmi 25) {:color "inherit" :diagnose "normal"}
+                            (< bmi 30) {:color "orange" :diagnose "overweight"}
+                            :else {:color "red" :diagnose "obese"})]
+    [:div
+     [:h3 "BMI calculator"]
+     [:div
+      "Height: " (int height) "cm"
+      [slider :height height 100 220]]
+     [:div
+      "Weight: " (int weight) "kg"
+      [slider :weight weight 30 150]]
+     [:div
+      "BMI: " (int bmi) " "
+      [:span {:style {:color color}} diagnose]
+      [slider :bmi bmi 10 50]]]))
+```
 ## Binding the form to a document
 ```clj
 (defn row [label input]
