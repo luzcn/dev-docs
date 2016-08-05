@@ -1,4 +1,52 @@
 # re-frame
+Impelemnt some reagent example with re-frame. The original codes are https://reagent-project.github.io/
+
+### Update the textbox value example
+
+This simple example demonstrated how to use re-frame:
+* register handlers `reg-event` to initialize and update the `db` value. To call this handler, you can use `dispatch` with the corresponding keyword.
+* register subs `reg-sub`, which defines some operations to fetch data from `db`. Use `subscribe` to actually call the corresponding subs.
+
+```cljs
+(ns cljsproject.views.subs
+  (:require [reagent.core :as r]
+            [re-frame.core :refer [reg-event
+                                   path
+                                   reg-sub
+                                   dispatch
+                                   dispatch-sync
+                                   subscribe]]))
+
+
+;; re-frame register handler
+(reg-event
+  :initialize
+  (fn [db env]
+    (merge db {:text "some data"})))
+
+;; usage: (dispatch [:update [:text "some new values"]])
+(reg-event
+  :update
+  (fn [db [_ [path value]]]
+    (assoc db path value)))
+
+
+;; usage: (subscribe [:text-value])
+(reg-sub
+  :text-value
+  (fn [db]
+    (:text db)))
+    
+(defn text-component []
+  (let [value (subscribe [:text-value])]
+    (fn []
+      [:div
+       [:p "The value is now: " @value]
+       [:input {:type "text"
+                :value @value
+                :on-change #(dispatch [:update [:text (.-target.value %)]])}]])))
+```
+
 
 ```cljs
 (ns cljsproject.views.test-page
