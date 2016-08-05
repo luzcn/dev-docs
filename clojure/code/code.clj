@@ -26,9 +26,22 @@
 ;; example to use map-indexed
 (map-indexed (fn[idx item] (merge {:id idx} item)) data)
 
+
+
+
+## map examples
+### assoc-in
+Associates a value in a nested associative structure.
+```clj
+(def data {:name {:first "Z" :second "L"}})
+(assoc-in data [:name :second] "kkk")
+
+=> {:name {:first "Z", :second "kkk"}}
+
 ;; assoc/assoc-in example
 (-> {:name "T" :value 1} (assoc :debug false))
 => {:name "T", :value 1, :debug false}
 
 (-> {:name "T" :value {:value 1}} (assoc-in [:value :debug] false))
 => {:name "T", :value {:value 1, :debug false}}
+```
