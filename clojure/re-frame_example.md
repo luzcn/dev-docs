@@ -1,5 +1,5 @@
 # re-frame
-Impelemnt some reagent example with re-frame. The original codes are https://reagent-project.github.io/
+Impelemnt some reagent example with `[re-frame "0.8.0-alpha9"]`. The original codes are https://reagent-project.github.io/
 
 ### Update the textbox value example
 
@@ -32,6 +32,7 @@ This simple example demonstrated how to use re-frame:
 
 
 ;; usage: (subscribe [:text-value])
+;; in re-frame new version, no need to deref @db
 (reg-sub
   :text-value
   (fn [db]
@@ -47,7 +48,7 @@ This simple example demonstrated how to use re-frame:
                 :on-change #(dispatch [:update [:text (.-target.value %)]])}]])))
 ```
 
-
+### A simple example to fectch data and display as lists
 ```cljs
 (ns cljsproject.views.test-page
   (:require-macros [reagent.ratom :refer [reaction]])
@@ -59,7 +60,7 @@ This simple example demonstrated how to use re-frame:
 ;; usage (subscribe [:data])
 (re-frame/reg-sub :phones
   (fn [db]
-   (:phones @db)))
+   (:phones db)))
 
 
 ;; re-frame handler
