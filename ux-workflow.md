@@ -36,6 +36,12 @@ arc summary pattern
 ### Specify a custom config
 - Develop on R2 if R0 is down: `CONFIGS=base,dev-r2 lein figwheel`
 - Test in integ-next: `CONFIGS=base,dev-r0-next lein figwheel`
+- The console links:
+```
+r0/next: https://console-next-integ.aka.r0.grungy.us/ 
+r0/stable: https://console-stable-integ.aka.r0.grungy.us/
+r2: https://console.us-az-phoenix-1.oracleiaas.com/?tenant=uxdev
+```
 
 ### REPL useful commands
 - view the global application state
