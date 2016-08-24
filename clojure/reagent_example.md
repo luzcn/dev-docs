@@ -168,5 +168,5 @@ In the *core.cljs* file, we create two functions
                          
 (defn ^:export main []
   (reagent/render [home]
-                  (.getElementById js/document "app")))
+                  (.getElementById js/document "app"))) 
 ```
