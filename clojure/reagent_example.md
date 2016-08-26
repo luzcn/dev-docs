@@ -15,8 +15,12 @@ lein new reagent-frontend <project name>
 lein new reagent-figwheel <project name> +routes
 ```
 
-Most of the time, all you need is a simple `lein new figwheel <project name>`
-
+Most of the time, all you need is a simple `lein new figwheel <project name>` then add following dependencies in to project.
+```
+[reagent "0.6.0-rc"]
+[re-frame "0.8.0"]
+[prismatic/plumbing "0.5.3"]
+```
 # reagent example
 
 ## BMI Calculator
