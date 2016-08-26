@@ -1,16 +1,20 @@
 ## create reagent project
-To create a new Reagent project simply run:
+- To create a new Reagent project simply run:
 ```
 lein new reagent <project name>
 ```
-If you wish to only create the assets for ClojureScript without a Clojure backend then do the following instead:
+This will create both `clj` and `cljs` folder, but no figwheel support added.
+
+- If you wish to only create the assets for ClojureScript without a Clojure backend then do the following instead:
 ```
 lein new reagent-frontend <project name>
 ```
-If you want to create a SVG with reagent, you can use
+
+- If you want to create a SVG with reagent, figwheel and routers support, you can use
 ```
-lein new figwheel <project name> -- --reagent
+lein new reagent-figwheel <project name> +routes
 ```
+see more details [here](https://github.com/gadfly361/reagent-figwheel)
 
 # reagent example
 
