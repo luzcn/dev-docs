@@ -10,11 +10,12 @@ This will create both `clj` and `cljs` folder, but no figwheel support added.
 lein new reagent-frontend <project name>
 ```
 
-- If you want to create a SVG with reagent, figwheel and routers support, you can use
+- If you want to create a SVG with reagent, figwheel and routers support, see more details [here](https://github.com/gadfly361/reagent-figwheel)
 ```
 lein new reagent-figwheel <project name> +routes
 ```
-see more details [here](https://github.com/gadfly361/reagent-figwheel)
+
+Most of the time, all you need is a simple `lein new figwheel <project name>`
 
 # reagent example
 
