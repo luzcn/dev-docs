@@ -1,4 +1,4 @@
-
+```clj
 ;;
 ;;  reduce vs apply example
 ;;
@@ -23,9 +23,8 @@
 
 (def data [{:name "n" :value "n"} {:name "m" :value "m"}])
 
-;; example to use map-indexed
-(map-indexed (fn[idx item] (merge {:id idx} item)) data)
 
+```
 
 ## map examples
 ### assoc-in
@@ -43,8 +42,12 @@ Associates a value in a nested associative structure.
 (-> {:name "T" :value {:value 1}} (assoc-in [:value :debug] false))
 => {:name "T", :value {:value 1, :debug false}}
 ```
-
-## remove items from a set/list
+### map-indexed
+```clj
+;; example to use map-indexed
+(map-indexed (fn[idx item] (merge {:id idx} item)) data)
+```
+### remove items from a set/list
 ```clj
 (remove #{:a} #{:b :c :d :a :e})
 ;;=> (:e :c :b :d)
