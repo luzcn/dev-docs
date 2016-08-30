@@ -53,6 +53,3 @@
   (feelings-about
     ([x] "meh")
     ([x y] (str "meh about " y))))
-
-
-curl -H "Content-type: application/json" -X POST -d '{"name":"Zheng Lu", "email":"zheng.lu@oracle.com","createPersonalPageEmail":true}' "http://telemetrynotifier.aka.r0.grungy.us/pagerdutyadmin/newuser"
