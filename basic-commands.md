@@ -1,7 +1,7 @@
 ## ssh key
 * generate ssh key
 ```bash
-ssh-keygen -t rsa -b 4096 -C
+ssh-keygen -t rsa -b 4096
 ```
 * Ensure ssh-agent is enabled
 ```bash
@@ -12,7 +12,10 @@ eval "$(ssh-agent -s)"
 ```bash
 ssh-add ~/.ssh/id_rsa
 ```
-
+* copy to clipboard
+```bash
+pbcopy < ~/.ssh/id_rsa.pub
+```
 # Vim basic commands
 
 #### Delete
