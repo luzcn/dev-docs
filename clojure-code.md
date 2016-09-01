@@ -128,19 +128,22 @@ Associates a value in a nested associative structure.
     (if (empty? n)  ; check if the sequence n is empty now
       result
       (let [[p & remains] n] (recur remains (into result (set [p (replace_with p)])))))))
+```
 
 
-
-;; map implementation example
+### map implementation example
+```clj
 (defn mymap
   ([myfunc dataList] (mymap myfunc dataList []))
   ([myfunc dataList result]
     (if (empty? dataList)
       result
       (mymap myfunc (rest dataList) (conj result (myfunc (first dataList)))))))
+```
 
-
-;; accumulate sum recursive example
+### recursive
+```clj
+;;accumulate sum recursive example
 (defn sum
   ([nums] (sum nums 0))
   ([nums result]
