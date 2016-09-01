@@ -96,7 +96,8 @@ Associates a value in a nested associative structure.
           (printList remains)))))
 
 
-;; example from the book
+### example from the book
+```clj
 (def mylist [{:name "head" :size 3}
              {:name "left-eye" :size 1}
              {:name "left-ear" :size 1}
@@ -170,4 +171,4 @@ Associates a value in a nested associative structure.
       (if (pos? cnt)
         (recur (dec cnt) (* acc cnt))
         acc))))
-
+```
