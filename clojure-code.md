@@ -1,7 +1,6 @@
 ### Polymorphism
 ```clj
 
-
 ;; multimethod example 
 ;; 
 ;; clojure provides polymorphism
@@ -26,62 +25,36 @@
     [were-creature]
     (str (:name were-creature) " will take the default behavior"))
 
-
-
-;; defprotocl example
-(defprotocol Psychodynamics
-  (thoughts [x] "The data type's innermost thoughts")
-  (feelings-about [x] [x y] "Feelings about self or other"))
-
-;; extend-type the followed java type indicate the funcion arguments types
-(extend-type java.lang.Object
-  Psychodynamics
-  (thoughts [x] "Maybe the Internet is just a vector for toxoplasmosis")
-  (feelings-about
-    ([x] "meh")
-    ([x y] (str "meh about " y))))
-
-
-;; similar to extend-type
-(extend-protocol Psychodynamics
-  java.lang.String
-  (thoughts [x] "Truly, the character defines the data type")
-  (feelings-about
-    ([x] "longing for a simpler way of life")
-    ([x y] (str "envious of " y "'s simpler way of life")))
-
-  java.lang.Object
-  (thoughts [x] "Maybe the Internet is just a vector for toxoplasmosis")
-  (feelings-about
-    ([x] "meh")
-    ([x y] (str "meh about " y))))
-
 ```
 
-### reduce vs apply example
-```clj
-(apply hash-map [:a 5 :b 6])
-;= {:a 5, :b 6}
-(reduce hash-map [:a 5 :b 6])
-;= {{{:a 5} :b} 6}
+### clojure protocol simple example
 
-;; the clojure function returns the last value
-((fn [x] 
-    (cond  (< x 10)
-           (do (println "x is a small number")
-               :small)
-           (< 100 x 1000)
-           (do (println "x is a big number")
-               :big)
-           (>= x 10000)
-           (do (println "x is a REALLY big number")
-               :huge) :else
-           (do (println  "x is just a medium-sized number")
-               :medium))) 1000)
+1. define a protocol
+```cljs
+(defprotocol greet
+  (say-hello [this]))
+```
+similar to create a Java Interface 
+```java
+Interface Greet{
+    public sayHello();
+}
+```
+2. use clojure `record` to implement this protocol
+```cljs
+(defrecord person [name title]
+  greet
+  (say-hello [this]  (str "Hello " name)))
 
-(def data [{:name "n" :value "n"} {:name "m" :value "m"}])
+;; clojure record provides this map-> build factory
+;; it construct a "Person" object
+(defn client []
+  (map->person {:name "Test Name" :title "TT"}))
 
-
+;; reagent component
+(defn component []
+  [:div
+   [:p (say-hello (client))]])
 ```
 
 ## map examples
@@ -188,16 +161,6 @@ Associates a value in a nested associative structure.
 ```
 
 
-### map implementation example
-```clj
-(defn mymap
-  ([myfunc dataList] (mymap myfunc dataList []))
-  ([myfunc dataList result]
-    (if (empty? dataList)
-      result
-      (mymap myfunc (rest dataList) (conj result (myfunc (first dataList)))))))
-```
-
 ### recursive
 ```clj
 ;;accumulate sum recursive example
@@ -231,4 +194,40 @@ Associates a value in a nested associative structure.
       (if (pos? cnt)
         (recur (dec cnt) (* acc cnt))
         acc))))
+```
+### reduce vs apply example
+```clj
+(apply hash-map [:a 5 :b 6])
+;= {:a 5, :b 6}
+(reduce hash-map [:a 5 :b 6])
+;= {{{:a 5} :b} 6}
+
+;; the clojure function returns the last value
+((fn [x] 
+    (cond  (< x 10)
+           (do (println "x is a small number")
+               :small)
+           (< 100 x 1000)
+           (do (println "x is a big number")
+               :big)
+           (>= x 10000)
+           (do (println "x is a REALLY big number")
+               :huge) :else
+           (do (println  "x is just a medium-sized number")
+               :medium))) 1000)
+
+(def data [{:name "n" :value "n"} {:name "m" :value "m"}])
+
+```
+
+
+
+### map implementation example
+```clj
+(defn mymap
+  ([myfunc dataList] (mymap myfunc dataList []))
+  ([myfunc dataList result]
+    (if (empty? dataList)
+      result
+      (mymap myfunc (rest dataList) (conj result (myfunc (first dataList)))))))
 ```
