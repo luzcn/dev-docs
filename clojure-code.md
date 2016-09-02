@@ -29,7 +29,7 @@
 
 ### clojure protocol simple example
 
-1. define a protocol
+- define a protocol
 ```cljs
 (defprotocol greet
   (say-hello [this]))
@@ -40,7 +40,7 @@ Interface Greet{
     public sayHello();
 }
 ```
-2. use clojure `record` to implement this protocol
+- use clojure `record` to implement this protocol
 ```cljs
 (defrecord person [name title]
   greet
