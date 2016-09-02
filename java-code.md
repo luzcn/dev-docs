@@ -23,5 +23,16 @@ for (Map.Entry<String, String> entry : map.entrySet())
 }
 ```
 
+### sort a string
+in java, string is immutable. We have to create a new string.
+```java
+String sort(String str){
+  char[] c = str.toCharArray();
+  Arrays.sort(c);
+  
+  return new String(c);
+}
+```
+
 ### Using lambda in java
 
