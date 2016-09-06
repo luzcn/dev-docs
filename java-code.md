@@ -4,6 +4,10 @@ boolean find(int[] nums, int target){
   return Arrays.stream(nums).anyMatch(x -> x == target);
 }
 ```
+### ArrayList initialization
+```java
+List<String> places = Arrays.asList("Buenos Aires", "Córdoba", "La Plata");
+```
 
 ### Iterate througe a HashMap
 ```java
@@ -43,5 +47,9 @@ int num = Integer.parseInt(c);
 Character.isDigit(c);
 ```
 
-### Using lambda in java
+### Using lambda to speficy the sort
+```java
+ArrayList<Integer> result = new ArrayList<Integer>(); 
+result.sort((v1, v2)-> v1 - v2);
+```
 
