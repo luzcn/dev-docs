@@ -33,6 +33,10 @@ String sort(String str){
   return new String(c);
 }
 ```
+### char to int
+```java
+int num = Integer.parseInt(c);
+```
 
 ### Using lambda in java
 
