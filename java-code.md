@@ -1,9 +1,3 @@
-### Check if array contains certain value
-```java
-boolean find(int[] nums, int target){
-  return Arrays.stream(nums).anyMatch(x -> x == target);
-}
-```
 ### ArrayList initialization
 ```java
 List<String> places = Arrays.asList("Buenos Aires", "Córdoba", "La Plata");
@@ -47,9 +41,17 @@ int num = Integer.parseInt(c);
 Character.isDigit(c);
 ```
 
-### Using lambda to speficy the sort
+### Using lambda
+#### sort ArrayList
 ```java
 ArrayList<Integer> result = new ArrayList<Integer>(); 
 result.sort((v1, v2)-> v1 - v2);
+```
+
+#### Check if array contains certain value
+```java
+boolean find(int[] nums, int target){
+  return Arrays.stream(nums).anyMatch(x -> x == target);
+}
 ```
 
