@@ -38,5 +38,10 @@ String sort(String str){
 int num = Integer.parseInt(c);
 ```
 
+### check if a char is didit
+```java
+Character.isDigit(c);
+```
+
 ### Using lambda in java
 
