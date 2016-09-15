@@ -1,5 +1,6 @@
 ## Undoing Changes
 - git checkout
+You can use `git checkout` to change your code back to a previous commit, it will detach your `HEAD` and remove the commits.
 ```
 git log --oneline 
 git checkout <commit>
