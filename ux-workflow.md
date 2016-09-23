@@ -1,5 +1,10 @@
 # The UX team work notes
 
+### useful links
+- [Hg builds](https://teamcity.aka.lgl.grungy.us/viewType.html?buildTypeId=UX_HgBuild)
+- 
+
+
 ### Build lein css/cljs
 ```bash
  lein clean
