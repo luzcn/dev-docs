@@ -64,8 +64,15 @@ use `log/debug` to print out
 2. Place it in /opt/google/chrome/
 3. Run the commands `CLIENT_STAGE=integ-stable HG_ENDPOINT="http://localhost:8181" HG_WEBDRIVER_BROWSER="chrome" lein ui-test`
 
-
-
-
 ### artifacts 
 use this [link](http://artifactoryui.oraclecorp.com/artifactory/webapp/#/artifacts/browse/tree/search/package/eyJxdWVyeSI6eyJzZWFyY2giOiJnYXZjIiwiZ3JvdXBJRCI6ImNvbS5vcmFjbGUucGljLmNvbW1vbnMiLCJhcnRpZmFjdElEIjoiY29yZXNlcnZpY2VzLWFwaS1zcGVjIiwic2VsZWN0ZWRSZXBvc2l0b3JpZXMiOltdfSwic2VsZWN0ZWRQYWNrYWdlVHlwZSI6eyJpZCI6ImdhdmMiLCJkaXNwbGF5TmFtZSI6IkdBVkMiLCJpY29uIjoicG9tIn0sInNlbGVjdGVkUmVwb3NpdG9yaWVzIjpbXSwiY29sdW1ucyI6WyJhcnRpZmFjdCIsImdyb3VwSUQiLCJhcnRpZmFjdElEIiwidmVyc2lvbiIsImNsYXNzaWZpZXIiLCJyZXBvIiwicGF0aCIsIm1vZGlmaWVkIl19) to review the service-api spec.
+
+
+
+# CM and oncall
+### Notify Technical Content
+#### TC should be notified the same day as the R0 deployment.
+- Bug everyone to send you a summary of significant changes
+- Send an email (sic_technical_content_us_grp@oracle.com,opc_ux_us_grp@oracle.com) to Technical Content and UX describing the changes and when they will be in R2.
+
+
