@@ -2,7 +2,10 @@
 
 ### useful links
 - [Hg builds](https://teamcity.aka.lgl.grungy.us/viewType.html?buildTypeId=UX_HgBuild)
-- 
+
+### R2 access ssh
+`ssh -C -L localhost:8082:ingress-proxy.svc.ad1.r2:8080 bastion.r2.oracleiaas.com`
+
 
 
 ### Build lein css/cljs
