@@ -78,9 +78,16 @@ use this [link](http://artifactoryui.oraclecorp.com/artifactory/webapp/#/artifac
 
 
 # CM and oncall
-### Notify Technical Content
-#### TC should be notified the same day as the R0 deployment.
-- Bug everyone to send you a summary of significant changes
+### Deplpy to R0
 - Send an email (sic_technical_content_us_grp@oracle.com,opc_ux_us_grp@oracle.com) to Technical Content and UX describing the changes and when they will be in R2.
+- In [Hg Master](https://teamcity.aka.lgl.grungy.us/project.html?projectId=UX_HgMaster) -> Hg Builds, pin the build you want to deploy and tag it as "stable".
+- Follow the [Deploying a specific build](https://confluence.aka.lgl.grungy.us/display/UX/Deploying+a+Specific+Build), deploy the pined build number in "Hg R0 Stable Deploy".
+- Run the Post Deployment tests.
+
+### Deplpy to R2
+-  create the CM, find [instructions](https://confluence.aka.lgl.grungy.us/display/UX/Change+Management+in+a+Nutshell)
+- When deploying, update the CM Status to 'Implementing'.
+- Follow the [Deploying a specific build](https://confluence.aka.lgl.grungy.us/display/UX/Deploying+a+Specific+Build), deploy to each AD.
+- Pin the build number as "prod", which should also be pinned as "stable".
 
 
