@@ -231,3 +231,9 @@ Associates a value in a nested associative structure.
       result
       (mymap myfunc (rest dataList) (conj result (myfunc (first dataList)))))))
 ```
+
+### create 2D arrays
+```clj
+(defn create-matrix [x y]
+  (vec (repeat x (vec (repeat y -1)))))
+```
