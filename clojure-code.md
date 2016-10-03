@@ -1,3 +1,89 @@
+## map examples
+
+### mapv
+```clj
+;; A useful idiom to pull "columns" out of a vector of vecotr (2D array). 
+;; Note, it is equivalent to:
+;; (mapv vector [:a :b :c] [:d :e :f] [:g :h :i])
+
+(apply mapv vector [[:a :b :c]
+                    [:d :e :f]
+                    [:g :h :i]])
+;;=> [[:a :d :g] [:b :e :h] [:c :f :i]]
+```
+
+### assoc-in
+Associates a value in a nested associative structure.
+```clj
+(def data {:name {:first "Z" :second "L"}})
+(assoc-in data [:name :second] "kkk")
+
+=> {:name {:first "Z", :second "kkk"}}
+
+;; assoc/assoc-in example
+(-> {:name "T" :value 1} (assoc :debug false))
+=> {:name "T", :value 1, :debug false}
+
+(-> {:name "T" :value {:value 1}} (assoc-in [:value :debug] false))
+=> {:name "T", :value {:value 1, :debug false}}
+```
+### map-indexed
+```clj
+;; example to use map-indexed
+(map-indexed (fn[idx item] (merge {:id idx} item)) data)
+```
+### remove items from a set/list
+```clj
+(remove #{:a} #{:b :c :d :a :e})
+;;=> (:e :c :b :d)
+
+(remove #{:a} [:b :c :d :a :e :a :f])
+;;=> (:b :c :d :e :f)
+```
+
+### example to use loop
+```clj
+(loop [i 0]
+  (println (str "Iteration " i))
+  (if (< i 3)
+    (recur (inc iteration))))
+
+
+;; A simple example to compute factorial
+(defn computeFactorial
+  [number]
+  (loop [n number, result 1]
+    (if (= n 0) 
+      result
+      (recur (dec n) (* n result)))))
+
+;; print out all the data in a given list
+((fn [data]
+   (loop [n data]
+     (if (not-empty n)
+       (do
+         (println (first n))
+         (recur (rest n)))
+       ))) [1,2,35,67,23])
+
+;; similar to this recursive function
+(defn func [data]
+  (if (not-empty data)
+    (do
+      (println (first data))
+      (func (rest data)))))
+
+
+;; use let instead of first/rest functions call
+(defn printList [dataList]
+  (if (not-empty dataList)
+      (let [[p & remains] dataList]
+        (do
+          (println p)
+          (printList remains)))))
+```
+
+
 ### Polymorphism
 ```clj
 
@@ -56,75 +142,6 @@ Interface Greet{
   [:div
    [:p (say-hello (client))]])
 ```
-
-## map examples
-### assoc-in
-Associates a value in a nested associative structure.
-```clj
-(def data {:name {:first "Z" :second "L"}})
-(assoc-in data [:name :second] "kkk")
-
-=> {:name {:first "Z", :second "kkk"}}
-
-;; assoc/assoc-in example
-(-> {:name "T" :value 1} (assoc :debug false))
-=> {:name "T", :value 1, :debug false}
-
-(-> {:name "T" :value {:value 1}} (assoc-in [:value :debug] false))
-=> {:name "T", :value {:value 1, :debug false}}
-```
-### map-indexed
-```clj
-;; example to use map-indexed
-(map-indexed (fn[idx item] (merge {:id idx} item)) data)
-```
-### remove items from a set/list
-```clj
-(remove #{:a} #{:b :c :d :a :e})
-;;=> (:e :c :b :d)
-
-(remove #{:a} [:b :c :d :a :e :a :f])
-;;=> (:b :c :d :e :f)
-```
-
-;; example to use loop
-(loop [i 0]
-  (println (str "Iteration " i))
-  (if (< i 3)
-    (recur (inc iteration))))
-
-;; A simple example to compute factorial
-(defn computeFactorial
-  [number]
-  (loop [n number, result 1]
-    (if (= n 0) 
-      result
-      (recur (dec n) (* n result)))))
-
-;; print out all the data in a given list
-((fn [data]
-   (loop [n data]
-     (if (not-empty n)
-       (do
-         (println (first n))
-         (recur (rest n)))
-       ))) [1,2,35,67,23])
-
-;; similar to this recursive function
-(defn func [data]
-  (if (not-empty data)
-    (do
-      (println (first data))
-      (func (rest data)))))
-
-;; use let instead of first/rest functions call
-(defn printList [dataList]
-  (if (not-empty dataList)
-      (let [[p & remains] dataList]
-        (do
-          (println p)
-          (printList remains)))))
-
 
 ### example from the book
 ```clj
