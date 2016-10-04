@@ -1,5 +1,13 @@
 ## map examples
 
+### comp
+Takes a set of functions and returns a fn that is the composition
+of those fns.
+```clj
+(def negative-quotient (comp - /))
+```
+
+
 ### mapv
 ```clj
 ;; A useful idiom to pull "columns" out of a vector of vecotr (2D array). 
