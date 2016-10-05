@@ -1,3 +1,17 @@
+## Clojure destructuring
+- use `:as all` to bind the entire input vector to the symbol `all`
+```clj
+(def name [:v1 :v2 :v3 :v4])
+(defn test-func [name]
+	(let [[s1 :as all] name]
+		(println "the first name of " all "is " s1)))
+```
+similar, we cau use `defnk` 
+```clj
+(defnk test-func [s1 :as all]
+  (println "the first name of " all "is " s1))
+```
+
 ### comp
 Takes a set of functions and returns a fn that is the composition
 of those fns.
