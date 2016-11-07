@@ -1,11 +1,19 @@
 ### git push to remote branch
 When you have your local changes that you want to push them to upstream. The command for this is simple: `git push <remote-name> <branch-name>`. 
 
-For example, push your master branch to your origin server
+For example, push your `development` branch to your origin server
 ```
-git push origin master
+git push origin development
 ```
+- To sync your remote branch with `master` branch, you need to `pull` from the `origin master`, resolve any merge conflicts, then force to `push` to remote.
+```
+## in your development branch
+git pull origin master
 
+## resolve any merge conflicts
+
+git pull -f origin development
+```
 ### git log
 - display commits in single lines
 ```
