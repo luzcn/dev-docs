@@ -1,3 +1,10 @@
+### git push to remote branch
+When you have your local changes that you want to push them to upstream. The command for this is simple: `git push <remote-name> <branch-name>`. 
+
+For example, push your master branch to your origin server
+```
+git push origin master
+```
 
 ### git log
 - display commits in single lines
@@ -13,8 +20,6 @@ Or, you can simpley use `-<number>` to display the latest `<number>` commits.
 ```
 git log --oneline -2
 ```
-
-
 
 
 ### git checkout
