@@ -8,11 +8,11 @@ git push origin development
 - To sync your remote branch with `master` branch, you need to `pull` from the `origin master`, resolve any merge conflicts, then force to `push` to remote.
 ```
 ## in your development branch
-git pull origin master
+git pull origin/master development
 
 ## resolve any merge conflicts
 
-git pull -f origin development
+git pull -f origin/development development
 ```
 ### git log
 - display commits in single lines
