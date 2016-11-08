@@ -14,6 +14,12 @@ git pull origin/master development
 
 git pull -f origin/development development
 ```
+
+### git delete remote branch
+```
+git push origin --delete <branch_name>
+```
+
 ### git log
 - display commits in single lines
 ```
