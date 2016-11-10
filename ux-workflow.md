@@ -28,6 +28,13 @@ verify/test the correctness.
 
 `git br <branch name>` will always track `master`
 
+
+```
+git checkout -b <new branch>
+git commit -am "commit message"
+git pull --rebase origin master
+git push --set-upstream origin <new branch>
+```
 ### git useful commands
 - git squash to combine two commands as one `git rebase -i HEAD~3` will list the first 3 commits, then edit the popped file.
 
