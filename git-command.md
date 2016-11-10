@@ -5,14 +5,14 @@ For example, push your `development` branch to your origin server
 ```
 git push origin development
 ```
-- To sync your remote branch with `master` branch, you need to `pull` from the `origin master`, resolve any merge conflicts, then force to `push` to remote.
+- To sync your remote branch with `master` branch, you need to `pull` and `rebased` from the `origin master`, resolve any merge conflicts, then force to `push` to remote.
 ```
-## in your development branch
-git pull origin/master development
+;; in your development branch
+git pull --rebase origin master
 
-## resolve any merge conflicts
+;; resolve any merge conflicts, then push to remote
 
-git pull -f origin/development development
+git push --set-upstream origin development
 ```
 
 ### git delete remote branch
