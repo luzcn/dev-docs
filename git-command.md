@@ -1,18 +1,33 @@
 ### git push to remote branch
-When you have your local changes that you want to push them to upstream. The command for this is simple: `git push <remote-name> <branch-name>`. 
-
+The command for this is simple: 
+```
+git push <remote-name> <branch-name>
+``` 
 For example, push your `development` branch to your origin server
 ```
 git push origin development
 ```
-- To sync your remote branch with `master` branch, you need to `pull` and `rebased` from the `origin master`, resolve any merge conflicts, then force to `push` to remote.
+### Sync your remote branch with `master` branch
+you need to `pull` and `rebased` from the `origin master`, resolve any merge conflicts, then force to `push` to remote.
 ```
 ;; in your development branch
 git pull --rebase origin master
 
 ;; resolve any merge conflicts, then push to remote
 
+;; if the remote branch is not set
 git push --set-upstream origin development
+
+;; Or you can push with force
+git push -f
+```
+
+### pull and overwrite your local branch
+You can `fectch` the remote branch without merge, then `reset` 
+
+```
+git fetch --all
+git reset --hard origin/<branch_name> ;; not need the <branch_name> if reset from the upstream remote
 ```
 
 ### git delete remote branch
@@ -25,7 +40,7 @@ git push origin --delete <branch_name>
 ```
 git log --oneline 
 ```
-- showing a range of commits 
+- listing a range of commits 
 You can specify the range with two commits id, for example:
 ```
 git log --oneline 94cae8a8b373...3cd514d304b2
@@ -34,7 +49,6 @@ Or, you can simpley use `-<number>` to display the latest `<number>` commits.
 ```
 git log --oneline -2
 ```
-
 
 ### git checkout
 You can use `git checkout` to change your code back to a previous commit, it will detach your `HEAD` and remove the commits.
@@ -50,5 +64,3 @@ Or, you can change back to the specific commit
 ```
 git checkout <commit> <filename>
 ```
-
-### git revert
