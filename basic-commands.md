@@ -1,3 +1,7 @@
+## Sublime Text 3 configuration
+* [How to change default code snippets in Sublime Text 3](http://stackoverflow.com/questions/21190392/how-to-change-default-code-snippets-in-sublime-text-3)
+
+
 ## ssh key
 * generate ssh key
 ```bash
