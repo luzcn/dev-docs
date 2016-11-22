@@ -64,3 +64,10 @@ Or, you can change back to the specific commit
 ```
 git checkout <commit> <filename>
 ```
+
+### display and config git username/email
+```
+git config user.name  ;; will display the user name
+
+git config --list   ;; list all the config information
+```
