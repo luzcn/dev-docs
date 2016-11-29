@@ -47,7 +47,8 @@ Ctrl-U  move half-page up
 Ctrl-B  page up
 Ctrl-F  page down
 ```
-# Mac OS terminal configuration
+## Mac OS terminal 
+### configuration
 Add the following lines to `~/.bash_profile`
 ```bash  
 # bash color
@@ -58,6 +59,10 @@ PS1='\[\e[0;33m\]\h:\[\e[0;32m\]\W \[\e[0;33m\]\u\$\[\e[0m\] '
 # Arcanist
 alias arc='~/arcanist/arcanist/bin/arc'
 ```
+### display running process
+`ps -e` will list all the running process.
+or, use `top -o cpu` will lively display the process info order by cpu usage.
+
 
 # vim basic setting
 Add the following lines to `~/.vimrc`
