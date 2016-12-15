@@ -184,19 +184,6 @@ Interface Greet{
              {:name "left-lower-leg" :size 3}
              {:name "left-achilles" :size 1}
              {:name "left-foot" :size 2}])
-
-
-#_(defn replace_with [s]
-  ;(println s)
-  {:name (clojure.string/replace (:name s) #"^left-" "right-")
-   :size (:size s)})
-
-#_(defn transform [data]
-  (loop [n data, result []] ; create a local variable n, init as input data
-    (if (empty? n)  ; check if the sequence n is empty now
-      result
-      (let [[p & remains] n] (recur remains (into result (set [p (replace_with p)])))))))
-      
       
 (defn replace-with
   "replace all the 'left' string to 'right' string"
