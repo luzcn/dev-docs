@@ -137,7 +137,7 @@ Associates a value in a nested associative structure.
 
 - define a protocol
 ```cljs
-(defprotocol greet
+(defprotocol IGreet
   (say-hello [this]))
 ```
 similar to create a Java Interface 
@@ -149,7 +149,7 @@ Interface Greet{
 - use clojure `record` to implement this protocol
 ```cljs
 (defrecord person [name title]
-  greet
+  IGreet
   (say-hello [this]  (str "Hello " name)))
 
 ;; clojure record provides this map-> build factory
