@@ -78,6 +78,9 @@ use `log/debug` to print out
 1. Download the Chome webdriver here: https://sites.google.com/a/chromium.org/chromedriver/downloads
 2. Place it in /opt/google/chrome/
 3. Run the commands `CLIENT_STAGE=integ-stable HG_ENDPOINT="http://localhost:8181" HG_WEBDRIVER_BROWSER="chrome" lein ui-test`
+```
+CLIENT_STAGE=r2-ad1 CONFIG_FILES=./config/base-config.edn,./config/r2-ad1-config.edn,./config/automated-test-config.edn HG_ENDPOINT=http://localhost:8181 HG_WEBDRIVER_BROWSER=chrome lein ui-test -f d -t post-deploy -t dep-cns 
+```
 
 ### artifacts 
 use this [link](http://artifactoryui.oraclecorp.com/artifactory/webapp/#/artifacts/browse/tree/search/package/eyJxdWVyeSI6eyJzZWFyY2giOiJnYXZjIiwiZ3JvdXBJRCI6ImNvbS5vcmFjbGUucGljLmNvbW1vbnMiLCJhcnRpZmFjdElEIjoiY29yZXNlcnZpY2VzLWFwaS1zcGVjIiwic2VsZWN0ZWRSZXBvc2l0b3JpZXMiOltdfSwic2VsZWN0ZWRQYWNrYWdlVHlwZSI6eyJpZCI6ImdhdmMiLCJkaXNwbGF5TmFtZSI6IkdBVkMiLCJpY29uIjoicG9tIn0sInNlbGVjdGVkUmVwb3NpdG9yaWVzIjpbXSwiY29sdW1ucyI6WyJhcnRpZmFjdCIsImdyb3VwSUQiLCJhcnRpZmFjdElEIiwidmVyc2lvbiIsImNsYXNzaWZpZXIiLCJyZXBvIiwicGF0aCIsIm1vZGlmaWVkIl19) to review the service-api spec.
