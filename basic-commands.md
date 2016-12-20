@@ -23,14 +23,24 @@ pbcopy < ~/.ssh/id_rsa.pub
 # Vim basic commands
 
 #### Delete
-- `dw` delete the current word.
+- `diw` to delete in the word (doesn't include spaces)
+- `daw` to delete around the word (includes spaces before the next word).
 - `dd` delete the entire line.
 - `u` undo
 
-#### copy/cut/paste
-- `yy`  copy the current line, `p` to paste.
+#### Copy/Cut and paste:
+- Position the cursor where you want to begin cutting.
+- Press `v` to select characters (or uppercase `V` to select whole lines, or `Ctrl-v` to select rectangular blocks).
+- Move the cursor to the end of what you want to cut.
+- Press `d` to cut (or `y` to copy).
+- Move to where you would like to paste.
+- Press `P` (upper case) to paste before the cursor, or `p` to paste after.
+
+`d` stands for delete in Vim, which in other editors is usually called cut
+`y` stands for yank in Vim, which in other editors is usually called copy
+
+- `yy`  copy the current line, `p` to paste after the cursor.
 - `yw` copy to the next word,  `yiw`  copy the current word excluding the surrounded whitespaces, `yaw` includes spaces.
-- `dw` to cut the word.
 
 #### move your cursor
 ```
