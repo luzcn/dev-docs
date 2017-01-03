@@ -35,18 +35,11 @@ git commit -am "commit message"
 git pull --rebase origin master
 git push --set-upstream origin <new branch>
 ```
-### git useful commands
-- git squash to combine two commands as one `git rebase -i HEAD~3` will list the first 3 commits, then edit the popped file.
-
-### The workflow of send out code review to *Phaboricator* 
-```git
-git add .
-git commit -m "<Your commit message>"
-git pull --rebase
-arc diff HEAD^
-```
-arc summary pattern
+summary pattern
 [https://confluence.aka.lgl.grungy.us/display/UX/Development](https://confluence.aka.lgl.grungy.us/display/UX/Development)
+
+### git useful commands
+- git squash to combine two commands as one `git rebase -i HEAD~3` will list the first 3 commits, then edit the proper files.
 
 ### Specify a custom config
 - Develop on R2 if R0 is down: `CONFIGS=base,dev-r2 lein figwheel`
