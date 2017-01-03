@@ -10,9 +10,7 @@
 
 ### Build lein css/cljs
 ```bash
- lein clean
- lein css
- lein cljsbuild once
+ lein do clean, css, cljsbuild once
 ```
 compile locally to catch any optimization errors
 ```
