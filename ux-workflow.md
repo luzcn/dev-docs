@@ -91,4 +91,7 @@ use this [link](http://artifactoryui.oraclecorp.com/artifactory/webapp/#/artifac
 - Follow the [Deploying a specific build](https://confluence.aka.lgl.grungy.us/display/UX/Deploying+a+Specific+Build), deploy to each AD.
 - Pin the build number as "prod", which should also be pinned as "stable".
 
-
+### interview summary
+Decision: Strong Inclined / Inclined / Not Inclined / Strong Not Inclined
+Summary: Couple of sentences summarizing your interview experience with this candidate
+Pros / Cons: 3-4 pros and cons that you observed for this candidate
