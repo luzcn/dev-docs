@@ -92,6 +92,6 @@ use this [link](http://artifactoryui.oraclecorp.com/artifactory/webapp/#/artifac
 - Pin the build number as "prod", which should also be pinned as "stable".
 
 ### interview summary
-Decision: Strong Inclined / Inclined / Not Inclined / Strong Not Inclined
-Summary: Couple of sentences summarizing your interview experience with this candidate
-Pros / Cons: 3-4 pros and cons that you observed for this candidate
+- Decision: Strong Inclined / Inclined / Not Inclined / Strong Not Inclined
+- Summary: Couple of sentences summarizing your interview experience with this candidate
+- Pros / Cons: 3-4 pros and cons that you observed for this candidate
