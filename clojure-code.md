@@ -1,13 +1,13 @@
 ## Clojure destructuring
 - use `:as all` to bind the entire input vector to the symbol `all`
-```clj
+```clojure
 (def name [:v1 :v2 :v3 :v4])
 (defn test-func [name]
 	(let [[s1 :as all] name]
 		(println "the first name of " all "is " s1)))
 ```
 similar, we cau use `defnk` 
-```clj
+```clojure
 (defnk test-func [s1 :as all]
   (println "the first name of " all "is " s1))
 ```
@@ -15,13 +15,13 @@ similar, we cau use `defnk`
 ### comp
 Takes a set of functions and returns a fn that is the composition
 of those fns.
-```clj
+```clojure
 (def negative-quotient (comp - /))
 ```
 
 ## map examples
 ### mapv
-```clj
+```clojure
 ;; A useful idiom to pull "columns" out of a vector of vecotr (2D array). 
 ;; Note, it is equivalent to:
 ;; (mapv vector [:a :b :c] [:d :e :f] [:g :h :i])
@@ -34,7 +34,7 @@ of those fns.
 
 ### assoc-in
 Associates a value in a nested associative structure.
-```clj
+```clojure
 (def data {:name {:first "Z" :second "L"}})
 (assoc-in data [:name :second] "kkk")
 
@@ -48,12 +48,12 @@ Associates a value in a nested associative structure.
 => {:name "T", :value {:value 1, :debug false}}
 ```
 ### map-indexed
-```clj
+```clojure
 ;; example to use map-indexed
 (map-indexed (fn[idx item] (merge {:id idx} item)) data)
 ```
 ### remove items from a set/list
-```clj
+```clojure
 (remove #{:a} #{:b :c :d :a :e})
 ;;=> (:e :c :b :d)
 
@@ -62,7 +62,7 @@ Associates a value in a nested associative structure.
 ```
 
 ### example to use loop
-```clj
+```clojure
 (loop [i 0]
   (println (str "Iteration " i))
   (if (< i 3)
@@ -105,7 +105,7 @@ Associates a value in a nested associative structure.
 
 
 ### Polymorphism
-```clj
+```clojure
 
 ;; multimethod example 
 ;; 
@@ -164,7 +164,7 @@ Interface Greet{
 ```
 
 ### example from the book
-```clj
+```clojure
 (def mylist [{:name "head" :size 3}
              {:name "left-eye" :size 1}
              {:name "left-ear" :size 1}
@@ -232,7 +232,7 @@ Interface Greet{
         acc))))
 ```
 ### reduce vs apply example
-```clj
+```clojure
 (apply hash-map [:a 5 :b 6])
 ;= {:a 5, :b 6}
 (reduce hash-map [:a 5 :b 6])
@@ -259,7 +259,7 @@ Interface Greet{
 
 
 ### map implementation example
-```clj
+```clojure
 (defn mymap
   ([myfunc dataList] (mymap myfunc dataList []))
   ([myfunc dataList result]
@@ -269,13 +269,13 @@ Interface Greet{
 ```
 
 ### create 2D arrays
-```clj
+```clojure
 (defn create-matrix [x y]
   (vec (repeat x (vec (repeat y -1)))))
 ```
 
 ### Combine a vector of collections into a single collection 
-```clj
+```clojure
 ;; the return type is the type of the first collection in the vector.
 (reduce into [[1 2 3] [:a :b :c] '([4 5] 6)])
 ;;=> [1 2 3 :a :b :c [4 5] 6]
