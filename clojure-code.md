@@ -273,3 +273,8 @@ Interface Greet{
 (defn create-matrix [x y]
   (vec (repeat x (vec (repeat y -1)))))
 ```
+
+### Combine a vector of collections into a single collection 
+;; the return type is the type of the first collection in the vector.
+(reduce into [[1 2 3] [:a :b :c] '([4 5] 6)])
+;;=> [1 2 3 :a :b :c [4 5] 6]
