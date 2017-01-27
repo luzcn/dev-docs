@@ -278,3 +278,10 @@ Interface Greet{
 ;; the return type is the type of the first collection in the vector.
 (reduce into [[1 2 3] [:a :b :c] '([4 5] 6)])
 ;;=> [1 2 3 :a :b :c [4 5] 6]
+
+;; The flatten function can be used to completely fuse 
+;; all of the items of a nested tree into a single sequence.
+;; Sometimes all that is needed is to fuse the first level
+;; of a tree. This can be done with 'reduce' and 'into'.
+(reduce into [] '([] [[10 18]] [[8 18]] [[10 12]] [[0 -6]] [[2 6]]))
+;;=> [[10 18] [8 18] [10 12] [0 -6] [2 6]]
