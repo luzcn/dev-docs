@@ -275,6 +275,7 @@ Interface Greet{
 ```
 
 ### Combine a vector of collections into a single collection 
+```clj
 ;; the return type is the type of the first collection in the vector.
 (reduce into [[1 2 3] [:a :b :c] '([4 5] 6)])
 ;;=> [1 2 3 :a :b :c [4 5] 6]
@@ -285,3 +286,4 @@ Interface Greet{
 ;; of a tree. This can be done with 'reduce' and 'into'.
 (reduce into [] '([] [[10 18]] [[8 18]] [[10 12]] [[0 -6]] [[2 6]]))
 ;;=> [[10 18] [8 18] [10 12] [0 -6] [2 6]]
+```
