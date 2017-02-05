@@ -114,3 +114,6 @@ nnoremap B ^
 nnoremap E $
 ```
 
+### Intellij 注册码
+
+[支持正版](http://idea.lanyus.com/)
