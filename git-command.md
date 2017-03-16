@@ -1,3 +1,8 @@
+### git change current branch HEAD to older commit
+```
+git reset --hard <commit id>
+```
+
 ### git push to remote branch
 The command for this is simple: 
 ```
