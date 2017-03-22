@@ -1,3 +1,16 @@
+### Convert a hashmap to vector of values
+```
+(def data {"a" "a", "b" "b", "c" "c"})
+user=> data
+data
+{"a" "a", "b" "b", "c" "c"}
+
+user=> (map first data)
+(map first data)
+("a" "b" "c")
+
+```
+
 ### Convert a lazy sequence
 `dorun`, `doall`, and `doseq` are all for **forcing lazy sequences**, presumably to get side effects.
 
