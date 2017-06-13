@@ -45,38 +45,6 @@ git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 or, use `top -o cpu` will lively display the process info order by cpu usage.
 
 
-# vim basic setting
-Add the following lines to `~/.vimrc`
-```vim
-" enable syntax processing
-syntax enable
-let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
-
-" set tab size
-set tabstop=4
-set softtabstop=4
-set expandtab
-set shiftwidth=4
-
-" UI Config
-set number
-set showcmd
-
-filetype indent on      " load filetype-specific indent files
-" set cursorline
-
-set showmatch           " highlight matching [{()}]
-
-" Searching
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
-
-" move to beginning/end of line
-nnoremap B ^
-nnoremap E $
-```
 
 ### Intellij 注册码
 
