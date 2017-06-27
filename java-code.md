@@ -19,7 +19,7 @@ Because the `Runnable` instance would outlive the method, this wouldn't compile 
 
 ### ArrayList initialization
 ```java
-List<String> places = Arrays.asList("Buenos Aires", "Córdoba", "La Plata");
+List<String> places = Arrays.asList("1", "2", "name");
 ```
 
 ### Iterate througe a HashMap
