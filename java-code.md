@@ -1,3 +1,22 @@
+### Final on method parameter
+Java makes a copy when passing a parameter, so if you pass a reference of an object, it simply passess a copy of the referece.
+With `final` declared parameter, you can still change the properties of the object, but you cannot reassign the reference.
+
+There are some situations where you have to put `final`, otherwise, it cannot compile.
+```java
+public void foo(final String a) {
+    SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            System.out.print(a);
+        }
+    }); 
+}
+```
+
+Because the `Runnable` instance would outlive the method, this wouldn't compile without the final keyword -- final tells the compiler that it's safe to take a copy of the reference (to refer to it later). Thus, it's the reference that's considered final, not the value. In other words: As a caller, you can't mess anything up...
+
+
+
 ### ArrayList initialization
 ```java
 List<String> places = Arrays.asList("Buenos Aires", "Córdoba", "La Plata");
