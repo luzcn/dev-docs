@@ -74,3 +74,21 @@ boolean find(int[] nums, int target){
 }
 ```
 
+### google Guava Rate Limiter example
+```java
+import com.google.common.util.concurrent.RateLimiter;
+
+import java.util.Date;
+
+public class Main {
+    public static void main(String args[]){
+
+        RateLimiter ratelimiter = RateLimiter.create(0.1);
+
+        for (int i = 0; i < 10; i++){
+            ratelimiter.acquire();
+            System.out.println(new Date());
+        }
+    }
+}
+```
