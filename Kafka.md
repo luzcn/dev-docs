@@ -24,3 +24,8 @@ bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 -
 ```
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
 ```
+
+### alter topic retention time
+```
+kafka-topics.sh --zookeeper localhost:2181 --alter --topic test --config retention.ms=1000
+```
