@@ -55,11 +55,11 @@ String sort(String str){
 int num = Integer.parseInt(c);
 ```
 
-### check if a char is didit
+### check if a char is digit
 ```java
 Character.isDigit(c);
 ```
-
+----
 ### Using lambda
 #### sort ArrayList
 ```java
@@ -72,9 +72,17 @@ result.sort((v1, v2)-> v1 - v2);
 boolean find(int[] nums, int target){
   return Arrays.stream(nums).anyMatch(x -> x == target);
 }
-```
 
-### google Guava Rate Limiter example
+```
+#### Java8 method reference
+```java
+List<Integer> nums = Arrays.asList(1, 22, 13, 84, 19);
+nums.ForEach(System.out::println);
+```
+The use of double colon here is *method reference*. It is equivalent to `nums.ForEach(x->System.out.println(x))`, it tells the function that I will call you with a parameter, but I don't care the name fo this parameter.
+-----
+
+### Google Guava Rate Limiter example
 ```java
 import com.google.common.util.concurrent.RateLimiter;
 
