@@ -114,6 +114,7 @@ public class Main {
 }
 ```
 
+<<<<<<< HEAD
 The executor also supports another kind of task named `Callable`.  Callables are functional interface like `Runnable` but return a value.
 
 ```java
@@ -193,3 +194,6 @@ public class Main {
     }
 }
 ```
+=======
+The executor also supports another kind of task named `Callable`.  Callables are functional interface like `Runnable` but return a value.
+>>>>>>> aa894c457466726c469f60b791023483e8ed9a28
