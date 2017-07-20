@@ -114,7 +114,6 @@ public class Main {
 }
 ```
 
-<<<<<<< HEAD
 The executor also supports another kind of task named `Callable`.  Callables are functional interface like `Runnable` but return a value.
 
 ```java
@@ -155,7 +154,7 @@ public class Main {
 
 Again, the `executor.submit` function invokes a thread to run the task, but not waits for the task complete. It returns a `Future` object, call the `get()` method will block the current thread and wait for the task finish. When call the `get()` method, we can set the time out parameter `future.get(1, TimeUnit.SECONDS)`. 
 
-Executors support batch submitting of multiple `Callable` tasks at once via invokeAll().
+Executors support batch submitting of multiple `Callable` tasks at once via `invokeAll()`.
 This method accepts a collection of callables and returns a list of futures.
 ```java
 import java.util.List;
@@ -189,11 +188,6 @@ public class Main {
         finally {
             executor.shutdown();
         }
-
-
     }
 }
 ```
-=======
-The executor also supports another kind of task named `Callable`.  Callables are functional interface like `Runnable` but return a value.
->>>>>>> aa894c457466726c469f60b791023483e8ed9a28
