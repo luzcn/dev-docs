@@ -79,7 +79,10 @@ boolean find(int[] nums, int target){
 List<Integer> nums = Arrays.asList(1, 22, 13, 84, 19);
 nums.ForEach(System.out::println);
 ```
+
 The use of double colon here is *method reference*. It is equivalent to `nums.ForEach(x->System.out.println(x))`, it tells the function that I will call you with a parameter, but I don't care the name fo this parameter.
+
+
 -----
 
 ### Google Guava Rate Limiter example
