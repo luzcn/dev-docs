@@ -44,7 +44,10 @@ git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 `ps -e` will list all the running process.
 or, use `top -o cpu` will lively display the process info order by cpu usage.
 
-
+### Open iBook folder
+```bash
+open ~/Library/Mobile\ Documents/iCloud\~com\~apple\~iBooks/Documents
+```
 
 ### Intellij 注册码
 
