@@ -16,4 +16,7 @@ dokcer rm -f <container-id>
 docker images -a
 
 docker rmi <image-name>
+
+// remove all images
+docker rmi $(docker images -a -q)
 ```
