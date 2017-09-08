@@ -1,3 +1,8 @@
+### run sh in a running container
+```
+docker exec -it <continer name> sh
+```
+
 ### docker compose
 ```
 docker-compose -f docker-compose-1kafka-1zk.yml up -d
