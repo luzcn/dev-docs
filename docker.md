@@ -1,3 +1,9 @@
+### check what ports are already in use
+```
+netstat -tunlp
+```
+
+
 ### run sh in a running container
 ```
 docker exec -it <continer name> sh
