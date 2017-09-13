@@ -1,8 +1,13 @@
-## Sublime Text 3 configuration
+### copy file to remote host
+```
+scp ./config.yml streaming-util-2001.node.ad2.r1:<your path>
+```
+
+### Sublime Text 3 configuration
 * [How to change default code snippets in Sublime Text 3](http://stackoverflow.com/questions/21190392/how-to-change-default-code-snippets-in-sublime-text-3)
 
 
-## ssh key
+### ssh key
 * generate ssh key
 ```bash
 ssh-keygen -t rsa -b 4096
