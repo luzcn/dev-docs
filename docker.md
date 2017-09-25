@@ -3,10 +3,16 @@
 netstat -tunlp
 ```
 
-
-### run sh in a running container
+### upload local docker image to remote host docker
 ```
-docker exec -it <continer name> sh
+docker save grafana/grafana:latest | ssh streaming-util-02001.node.ad2.r1 'sudo docker load'
+```
+
+
+
+### run bash in a running container
+```
+docker exec -it <continer name> bash
 ```
 
 ### docker compose
