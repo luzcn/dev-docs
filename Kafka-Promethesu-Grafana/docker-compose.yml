@@ -19,7 +19,7 @@ services:
       # - KAFKA_CREATE_TOPICS=customer:1:1,audit:1:1
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      # - JMX_PORT=9999
+      JMX_PORT: 9999
 
   kafka-jmx-exporter:
     build: ./jmx_exporter
@@ -27,11 +27,9 @@ services:
       - "5556:5556"  
     depends_on:
       - kafka
-    links:
-      - kafka
     # environment:
-    #   - JMX_PORT=9999
-    #   - JMX_HOST=kafka
+      # - JMX_PORT=9999
+      # - JMX_HOST=kafka
     #   - HTTP_PORT=8080
     #   - JMX_EXPORTER_CONFIG_FILE=./prometheus-jmx-exporter/config.yml
 

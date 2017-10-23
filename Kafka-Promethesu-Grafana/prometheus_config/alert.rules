@@ -1,0 +1,7 @@
+ALERT under_replicated
+  IF kafka_server_replicamanager_underreplicatedpartitions > 0
+  FOR 1m
+  LABELS {severity = "SEV2",}
+  ANNOTATIONS {
+      summary = "Under replicated partitions",
+    }

@@ -17,3 +17,13 @@ scrape_configs:
 
     static_configs:
       - targets: ['kafka-jmx-exporter:8080']
+
+#alerting:
+#  alertmanagers:
+#  - scheme: http
+#    static_configs:
+#      - targets: ['alertmanager:9093']
+
+
+rule_files:
+  - "alert.rules"

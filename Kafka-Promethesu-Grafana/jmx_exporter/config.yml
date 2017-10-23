@@ -1,4 +1,4 @@
-hostPort: kafka:9092
+hostPort: kafka:9999
 lowercaseOutputName: true
 # jmxUrl: service:jmx:rmi:///jndi/rmi://{{ getv "/jmx/host" }}:{{ getv "/jmx/port" }}/jmxrmi
 rules:
