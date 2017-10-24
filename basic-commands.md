@@ -1,3 +1,8 @@
+### fix brew install not writable problem
+```
+sudo chown -R `whoami`:admin /usr/local/bin
+```
+
 ### copy file to remote host
 ```
 scp ./config.yml streaming-util-2001.node.ad2.r1:<your path>
