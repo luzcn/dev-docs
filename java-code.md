@@ -1,3 +1,24 @@
+### static block 
+Static block is used for initializing the static variables.This block gets executed when the class is loaded in the memory.
+```java
+class JavaExample {
+   static int num;
+   static String mystr;
+
+   // Initialize the static members
+   static {
+      num = 97;
+      mystr = "Static keyword in Java";
+   }
+   public static void main(String args[])
+   {
+      System.out.println("Value of num: "+num);
+      System.out.println("Value of mystr: "+mystr);
+   }
+}
+```
+
+
 ### Final on method parameter
 Java makes a copy when passing a parameter, so if you pass a reference of an object, it simply passess a copy of the referece.
 With `final` declared parameter, you can still change the properties of the object, but you cannot reassign the reference.
