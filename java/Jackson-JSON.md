@@ -20,6 +20,7 @@ public class car {
 ```java
 ObjectMapper objectMapper = new ObjectMapper();
 Car car = new Car("yellow", "renault");
+
 objectMapper.writeValue(new File("target/car.json"), car);
 ```
 The output of the above can be seen in the file as follows:
@@ -36,6 +37,7 @@ Similary, we can use `ObjectMapper` method `readValue` to read a JSON to a Java 
 ```java
 String json = "{ \"color\" : \"Black\", \"type\" : \"BMW\" }";
 ObjectMapper objectMapper = new ObjectMapper();
+
 Car car = objectMapper.readValue(json, Car.class);  
 ```
 
@@ -44,6 +46,7 @@ We can parse a JSON  into a `JsonNode` object and used to retrieve data from a g
 ```java
 ObjectMapper objectMapper = new ObjectMapper();
 String json = "{ \"color\" : \"Black\", \"type\" : \"BMW\" }";
+
 JsonNode node = objectMapper.readTree(json);
 String color = node.get("color").asText();
 // Output: color -> Black
@@ -53,6 +56,7 @@ String color = node.get("color").asText();
 A JSON in the form of an array can be parsed into a Java object list
 ```java
 String jsonCarArray = "[{ \"color\" : \"Black\", \"type\" : \"BMW\" }, { \"color\" : \"Red\", \"type\" : \"FIAT\" }]";
+
 List<Car> carList = objectMapper.readValue(jsonCarArray, new TypeReference<List<Car>>(){});
 ```
 
@@ -60,6 +64,7 @@ List<Car> carList = objectMapper.readValue(jsonCarArray, new TypeReference<List<
 A JSON in the form of string can be parsed into a Java Map object
 ```java
 String json = "{ \"color\" : \"Black\", \"type\" : \"BMW\" }";
+
 Map<String, Object> map = objectMapper.readValue(json, new TypeReference<Map<String,Object>
 ```
 
