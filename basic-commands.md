@@ -11,6 +11,10 @@ scp ./config.yml streaming-util-2001.node.ad2.r1:<your path>
 ### Sublime Text 3 configuration
 * [How to change default code snippets in Sublime Text 3](http://stackoverflow.com/questions/21190392/how-to-change-default-code-snippets-in-sublime-text-3)
 
+### generate PEM key
+```
+openssl genrsa -out ~/.oci/oci_api_key.pem 2048
+```
 
 ### ssh key
 * generate ssh key
