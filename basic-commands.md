@@ -13,7 +13,14 @@ scp ./config.yml streaming-util-2001.node.ad2.r1:<your path>
 
 ### generate PEM key
 ```
-openssl genrsa -out ~/.oci/oci_api_key.pem 2048
+## create private key
+openssl genrsa -out ~/.ssh/zhenlu_key.pem 2048
+
+## change the privilage
+chmod go-rwx ~/.ssh/zhenlu_key.pem
+
+##
+openssl rsa -pubout -in ~/.ssh/zhenlu_key.pem -out ~/.ssh/zhenlu_key_public.pem
 ```
 
 ### ssh key
