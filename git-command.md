@@ -1,3 +1,8 @@
+### prune the removed remote branches
+```
+git remote prune origin
+```
+
 ### git change current branch HEAD to older commit
 ```
 git reset --hard <commit id>
