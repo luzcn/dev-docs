@@ -1,47 +1,56 @@
 ### Use freemarker template 
 We can use freemarker template to create some templates for configuration, emails and web pages.
-
-
-### Create a configuration instance
 ```java
-// Create your Configuration instance, and specify if up to what FreeMarker
-// version (here 2.3.27) do you want to apply the fixes that are not 100%
-// backward-compatible. See the Configuration JavaDoc for details.
-Configuration cfg = new Configuration(Configuration.getVersion());
+public class test {
+    public String getProductDetail() {
+        // Create your Freemarker Configuration instance, and specify version
+        Configuration cfg = new Configuration(Configuration.getVersion());
 
-// Specify the source where the template files come from.
-// Here, it tells the load path is src/main/resources
-// alternatively, we can use cfg.setClassLoaderForTemplateLoading(this.getClass().getClassLoader(), "")
-cfg.setClassForTemplateLoading(this.getClass(), "/");
+        // Specify the source where the template files come from.
+        // Here, it tells the load path is src/main/resources
+        // alternatively, we can use cfg.setClassLoaderForTemplateLoading(this.getClass().getClassLoader(), "")
+        cfg.setClassForTemplateLoading(this.getClass(), "/");
 
-// Set the preferred charset template files are stored in.
-cfg.setDefaultEncoding("UTF-8");
+        // Set the preferred charset template files are stored in.
+        cfg.setDefaultEncoding("UTF-8");
 
-// Sets how errors will appear.
-// During web page *development* TemplateExceptionHandler.HTML_DEBUG_HANDLER is better.
-cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
 
-// Don't log exceptions inside FreeMarker that it will thrown at you anyway:
-cfg.setLogTemplateExceptions(false);
+        // get template
+        Template template = cfg.getTemplate("product.ftl");
+        Product productDataModel = new Product("url", "name");
 
-// Wrap unchecked exceptions thrown during template processing into TemplateException-s.
-cfg.setWrapUncheckedExceptions(true);
+        Writer out = new StringWriter();
 
-```
+        // bind the data motel and templet
+        template.process(productDataModel, out);
 
-### Create the Data Model
-```
-@Value
-public class Product {
-     String url;
-     String name;
-     
-     public Product(String url, String name){
-        
-     }
-     
+        return out.toString();
+    }
+
+    @Value
+    public static class Product {
+        String url;
+        String name;
+
+        public Product(String url, String name) {
+            this.url = url;
+            this.name = name;
+        }
+    }
 }
+```
+And the template should be:
 
+```html
+<html>
+<head>
+  <title>Welcome!</title>
+</head>
+<body>
+  <p>Our latest product:
+  <a href="${url}">${name}</a>!
+</body>
+</html>
 ```
 
 ### some additional notes
