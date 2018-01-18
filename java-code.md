@@ -1,3 +1,15 @@
+### Convert a String to Character array
+```java
+
+// Character[] chars = new Character[s.length()];
+// for (int i = 0; i < chars.length; i++)
+//     chars[i] = s.charAt(i);
+
+// in java 8 lambda
+Character[] chars = s.chars().mapToObj(c -> (char) c).toArray(Character[]::new);
+```
+
+
 ### static block 
 Static block is used for initializing the static variables.This block gets executed when the class is loaded in the memory.
 ```java
