@@ -1,3 +1,11 @@
+### Java Collection Interface
+![alt text](https://www.geeksforgeeks.org/wp-content/uploads/SortedSetJava.png)
+
+### Java Sorted Set
+```java
+SortedSet<String> set = new TreeSet<>();
+```
+
 ### Convert a String to Character array
 ```java
 
