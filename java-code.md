@@ -102,6 +102,13 @@ Character.isDigit(c);
 ```
 ----
 ### Using lambda
+#### find max value from an array
+```java
+int[] nums = new int[]{1, 24, 33, 54, 5, 56, 123, 1, 24, 12};
+Arrays.stream(nums).max().ifPresent(System.out::println);
+
+IntStream.of(1, 2, 3, 4).max().ifPresent(System.out::println);
+```
 #### sort ArrayList
 ```java
 ArrayList<Integer> result = new ArrayList<Integer>(); 
