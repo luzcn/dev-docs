@@ -1,6 +1,55 @@
 ### Java Collection Interface
 ![alt text](https://www.geeksforgeeks.org/wp-content/uploads/SortedSetJava.png)
 
+
+----
+### Using lambda
+#### find max value from an array
+```java
+int[] nums = new int[]{1, 24, 33, 54, 5, 56, 123, 1, 24, 12};
+Arrays.stream(nums).max().ifPresent(System.out::println);
+
+IntStream.of(1, 2, 3, 4).max().ifPresent(System.out::println);
+```
+
+#### use lambda to print 2d array
+```java
+int[][] board = new int[][]{
+       {0, 0, 1, 0, 0},
+       {0, 0, 1, 0, 0},
+       {0, 0, 1, 0, 0},
+       {0, 0, 1, 0, 0},};
+
+for (int[] cs : board) {
+   Arrays.stream(cs).mapToObj(i -> i + " ").forEach(System.out::print);
+   System.out.println();
+}
+```
+
+
+#### sort ArrayList
+```java
+ArrayList<Integer> result = new ArrayList<Integer>(); 
+result.sort((v1, v2)-> v1 - v2);
+```
+
+#### Check if array contains certain value
+```java
+boolean find(int[] nums, int target){
+  return Arrays.stream(nums).anyMatch(x -> x == target);
+}
+
+```
+#### Java8 method reference
+```java
+List<Integer> nums = Arrays.asList(1, 22, 13, 84, 19);
+nums.ForEach(System.out::println);
+```
+
+The use of double colon here is *method reference*. It is equivalent to `nums.ForEach(x->System.out.println(x))`, it tells the function that I will call you with a parameter, but I don't care the name fo this parameter.
+
+
+
 ### Java Sorted Set
 ```java
 SortedSet<String> set = new TreeSet<>();
@@ -61,6 +110,9 @@ Because the `Runnable` instance would outlive the method, this wouldn't compile 
 ### ArrayList initialization
 ```java
 List<String> places = Arrays.asList("1", "2", "name");
+
+// Array initialization
+int[] nums = new int[]{1,2,3};
 ```
 
 ### Iterate througe a HashMap
@@ -100,36 +152,6 @@ int num = Integer.parseInt(c);
 ```java
 Character.isDigit(c);
 ```
-----
-### Using lambda
-#### find max value from an array
-```java
-int[] nums = new int[]{1, 24, 33, 54, 5, 56, 123, 1, 24, 12};
-Arrays.stream(nums).max().ifPresent(System.out::println);
-
-IntStream.of(1, 2, 3, 4).max().ifPresent(System.out::println);
-```
-#### sort ArrayList
-```java
-ArrayList<Integer> result = new ArrayList<Integer>(); 
-result.sort((v1, v2)-> v1 - v2);
-```
-
-#### Check if array contains certain value
-```java
-boolean find(int[] nums, int target){
-  return Arrays.stream(nums).anyMatch(x -> x == target);
-}
-
-```
-#### Java8 method reference
-```java
-List<Integer> nums = Arrays.asList(1, 22, 13, 84, 19);
-nums.ForEach(System.out::println);
-```
-
-The use of double colon here is *method reference*. It is equivalent to `nums.ForEach(x->System.out.println(x))`, it tells the function that I will call you with a parameter, but I don't care the name fo this parameter.
-
 
 -----
 
