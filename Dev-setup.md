@@ -96,8 +96,7 @@ nnoremap E $
   - Language Support for Java(TM) by Red Hat
 - Customize settings
 ```javascript
-{
-    {
+ {
     "java.errors.incompleteClasspath.severity": "ignore",
     "workbench.editor.enablePreview": false,
     "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home",
@@ -126,5 +125,4 @@ nnoremap E $
     "editor.suggestSelection": "recentlyUsedByPrefix",
 }
 
-}
 ```
