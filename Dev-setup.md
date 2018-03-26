@@ -97,24 +97,34 @@ nnoremap E $
 - Customize settings
 ```javascript
 {
+    {
     "java.errors.incompleteClasspath.severity": "ignore",
     "workbench.editor.enablePreview": false,
-    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home",
+    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home",
 
     "code-runner.executorMap": {
         "javascript": "node",
         "java": "cd $dir && javac $fileName -d ./out && java -cp ./out $fileNameWithoutExt",
-        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-        "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",     
+        "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "python": "python",
         "go": "go run",
         "shellscript": "bash",
-        "fsharp": "fsi",
-        "csharp": "scriptcs",
-        "typescript": "ts-node",
+        "csharp": "cd $dir && dotnet run",
         "scala": "scala"
     },
     "code-runner.clearPreviousOutput": true,
-    "workbench.welcome.enabled": false
+    "python.pythonPath": "/usr/local/opt/python/libexec/bin/python",
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 0,
+    "java.referencesCodeLens.enabled": false,
+    "editor.showFoldingControls": "always",
+    "editor.renderControlCharacters": true,
+    "files.autoSave": "onFocusChange",
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.colorTheme": "Darcula",
+    "editor.suggestSelection": "recentlyUsedByPrefix",
+}
+
 }
 ```
