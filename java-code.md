@@ -17,6 +17,9 @@ public class MyComparator implements Comparator<Integer>
 PriorityQueue minHeap=new PriorityQueue();
 PriorityQueue maxHeap=new PriorityQueue(size, new MyComparator());
 
+// use lambda
+PriorityQueue<ListNode> maxHeap = new PriorityQueue<>((x, y) -> y.val - x.val);
+
 ```
 
 
