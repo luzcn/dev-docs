@@ -2,6 +2,24 @@
 ![alt text](https://www.geeksforgeeks.org/wp-content/uploads/SortedSetJava.png)
 
 
+#### minHdap and maxHeap
+```java
+import java.util.Comparator;
+
+public class MyComparator implements Comparator<Integer>
+{
+    public int compare( Integer x, Integer y )
+    {
+        return y - x;
+    }
+}
+
+PriorityQueue minHeap=new PriorityQueue();
+PriorityQueue maxHeap=new PriorityQueue(size, new MyComparator());
+
+```
+
+
 ----
 ### Using lambda
 #### find max value from an array
@@ -49,7 +67,7 @@ nums.ForEach(System.out::println);
 The use of double colon here is *method reference*. It is equivalent to `nums.ForEach(x->System.out.println(x))`, it tells the function that I will call you with a parameter, but I don't care the name fo this parameter.
 
 
-
+------
 ### Java Sorted Set
 ```java
 SortedSet<String> set = new TreeSet<>();
@@ -86,7 +104,6 @@ class JavaExample {
    }
 }
 ```
-
 
 ### Final on method parameter
 Java makes a copy when passing a parameter, so if you pass a reference of an object, it simply passess a copy of the referece.
