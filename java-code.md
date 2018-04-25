@@ -58,7 +58,12 @@ result.sort((v1, v2)-> v1 - v2);
 ```java
 boolean find(int[] nums, int target){
   return Arrays.stream(nums).anyMatch(x -> x == target);
+  
+  // or use noneMatch
+  // Arrays.stream(nums).noneMatch(x -> x == target);
 }
+
+
 
 ```
 #### Java8 method reference
