@@ -1,5 +1,13 @@
 # The UX team work notes
 
+###
+https://console.us-phoenix-1.oraclecloud.com/
+tenant: uxdev
+user: uxdev
+pass: uxdevPass!1!
+
+hg.client.debug.enable_feature("streaming")
+
 ### useful links
 - [Hg builds](https://teamcity.aka.lgl.grungy.us/viewType.html?buildTypeId=UX_HgBuild)
 
