@@ -1,6 +1,13 @@
 ### Java Collection Interface
 ![alt text](https://www.geeksforgeeks.org/wp-content/uploads/SortedSetJava.png)
 
+#### HashSet vs. TreeSet vs. LinkedHashSet
+
+HashSet is Implemented using a hash table. Elements are not ordered. The add, remove, and contains methods have constant time complexity O(1).
+
+TreeSet is implemented using a tree structure(red-black tree in algorithm book). The elements in a set are sorted, but the add, remove, and contains methods has time complexity of O(log (n)). It offers several methods to deal with the ordered set like first(), last(), headSet(), tailSet(), etc.
+
+LinkedHashSet is between HashSet and TreeSet. It is implemented as a hash table with a linked list running through it, so it provides the order of insertion. The time complexity of basic methods is O(1).
 
 #### minHdap and maxHeap
 ```java
