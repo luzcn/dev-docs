@@ -52,6 +52,9 @@ for (int[] cs : board) {
    Arrays.stream(cs).mapToObj(i -> i + " ").forEach(System.out::print);
    System.out.println();
 }
+
+// or 
+System.out.println(String.join(" ", Arrays.stream(cs).mapToObj(String::valueOf).collect(Collectors.toList())));
 ```
 
 
