@@ -56,7 +56,10 @@ for (int[] cs : board) {
 // or 
 System.out.println(String.join(" ", Arrays.stream(cs).mapToObj(String::valueOf).collect(Collectors.toList())));
 ```
-
+### sort int[] array in descending order
+```java
+int[] sortedArray = Arrays.stream(nums).boxed().sorted(Comparator.reverseOrder()).mapToInt(x->x).toArray();
+```
 
 #### sort ArrayList
 ```java
