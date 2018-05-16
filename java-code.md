@@ -1,3 +1,12 @@
+### Java String
+#### check substring
+```java
+String s = "apple";
+System.out.println(s.indexOf("p"));
+```
+
+
+
 ### Java Collection Interface
 ![alt text](https://www.geeksforgeeks.org/wp-content/uploads/SortedSetJava.png)
 
