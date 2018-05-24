@@ -5,6 +5,14 @@ String s = "apple";
 System.out.println(s.indexOf("p"));
 ```
 
+### convert char-to-int and int-to-char
+```java
+char c = 'c';
+
+int index = c - 'a';
+
+char x = (char) (c + 2);
+```
 
 
 ### Java Collection Interface
