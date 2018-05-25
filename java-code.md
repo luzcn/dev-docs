@@ -168,6 +168,10 @@ List<String> places = Arrays.asList("1", "2", "name");
 
 // Array initialization
 int[] nums = new int[]{1,2,3};
+
+// initialize ArrayList with size and default value
+// the size is 10, all values are 1
+List<Integer> data = new ArrayList<>(Collections.nCopies(10, 1));
 ```
 
 ### Iterate througe a HashMap
