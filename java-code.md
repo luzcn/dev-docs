@@ -1,4 +1,16 @@
 ### Java String
+
+#### convert "List of Character" to String
+```java
+List<Character> res = new ArrayList<>();
+
+res.add('a');
+res.add('b');
+
+return String.valueOf(res);
+
+```
+
 #### check substring
 ```java
 String s = "apple";
