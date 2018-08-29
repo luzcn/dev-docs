@@ -244,3 +244,13 @@ public class Main {
     }
 }
 ```
+
+### Uninstall JDK
+```
+sudo rm -rf "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin"
+sudo rm -rf "/Library/PreferencePanes/JavaControlPanel.prefPane"
+sudo rm -rf "~/Library/Application Support/Java"
+
+// remove the JDK folder
+sudo rm -rf /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk
+```
