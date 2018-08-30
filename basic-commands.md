@@ -1,3 +1,10 @@
+### use netcat to check if connection established
+`nc` is the command which runs `netcat`, a simple Unix utility that reads and writes data across network connections, using the TCP or UDP protocol. It is a feature-rich network debugging and exploration tool
+```
+nc -l localhost:8080 
+```
+
+
 ### fix brew install not writable problem
 ```
 sudo chown -R `whoami`:admin /usr/local/bin
