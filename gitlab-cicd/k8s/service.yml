@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: wm-event-receiver
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
+spec:
+  selector:
+    app: wm-event-receiver
+  type: LoadBalancer
+  loadBalancerSourceRanges:
+    - 0.0.0.0/0  # Open to the world
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 8080

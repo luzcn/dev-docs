@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wm-event-receiver
+  namespace: wine
+spec:
+  selector:
+    matchLabels:
+      app: wm-event-receiver
+      environment: staging
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: wm-event-receiver
+        environment: staging
+    spec:
+      containers:
+      - name: wm-event-receiver
+        image: CI_REGISTRY_IMAGE:CI_PIPELINE_ID
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
