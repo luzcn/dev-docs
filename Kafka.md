@@ -29,3 +29,19 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --f
 ```
 kafka-topics.sh --zookeeper localhost:2181 --alter --topic test --config retention.ms=1000
 ```
+
+### List the topics to which the group is subscribed
+```
+kafka-consumer-groups --bootstrap-server <kafkahost:port> --group <group_id> --describe
+```
+Note the values under "CURRENT-OFFSET" and "LOG-END-OFFSET". "CURRENT-OFFSET" is the offset where this consumer group is currently at in each of the partitions.
+
+### Reset the consumer offset for a topic (preview)
+```
+kafka-consumer-groups --bootstrap-server <kafkahost:port> --group <group_id> --topic <topic_name> --reset-offsets --to-earliest
+```
+This will print the expected result of the reset, but not actually run it.
+
+### Reset the consumer offset for a topic (execute)
+```kafka-consumer-groups --bootstrap-server <kafkahost:port> --group <group_id> --topic <topic_name> --reset-offsets --to-earliest --execute
+```
