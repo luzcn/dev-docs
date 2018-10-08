@@ -43,5 +43,6 @@ kafka-consumer-groups --bootstrap-server <kafkahost:port> --group <group_id> --t
 This will print the expected result of the reset, but not actually run it.
 
 ### Reset the consumer offset for a topic (execute)
-```kafka-consumer-groups --bootstrap-server <kafkahost:port> --group <group_id> --topic <topic_name> --reset-offsets --to-earliest --execute
+```
+kafka-consumer-groups --bootstrap-server <kafkahost:port> --group <group_id> --topic <topic_name> --reset-offsets --to-earliest --execute
 ```
