@@ -1,3 +1,67 @@
+### Consumer/Producer config
+```java
+Consumer Config
+
+Properties props = new Properties();
+
+var jaasTemplate = "org.apache.kafka.common.security.scram.ScramLoginModule required username=\"%s\" password=\"%s\";";
+var jaasConfig = String.format(jaasTemplate, sasl_username, sasl_password);
+
+props.put("bootstrap.servers", "kafka.nonprod.us-west-2.aws.proton.nordstrom.com:9093");
+props.put("group.id", "sample-consumer");
+props.put("enable.auto.commit", "true");
+props.put("auto.commit.interval.ms", "1000");
+props.put("session.timeout.ms", "30000");
+props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+props.put("auto.offset.reset", "earliest");
+props.put("security.protocol", "SASL_SSL");
+props.put("sasl.mechanism", "SCRAM-SHA-512");
+props.put("sasl.jaas.config", jaasConfig);
+
+
+KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
+consumer.subscribe(Arrays.asList(topicName));
+
+
+
+
+Producer config
+
+Properties props = new Properties();
+
+var jaasTemplate = "org.apache.kafka.common.security.scram.ScramLoginModule required username=\"%s\" password=\"%s\";";
+var jaasConfig = String.format(jaasTemplate, sasl_username, sasl_password);
+
+props.put("bootstrap.servers", "kafka.nonprod.us-west-2.aws.proton.nordstrom.com:9093");
+props.put("application.id", "proton-producer-sample");
+
+// Specify the criteria of which requests are considered complete, "all" is the slowest but most durable.
+props.put(ProducerConfig.ACKS_CONFIG, "all");
+
+// When write to topic request failed, there is no retry
+props.put(ProducerConfig.RETRIES_CONFIG, "0");
+
+// The buffer size of unsent records
+props.put(ProducerConfig.BATCH_SIZE_CONFIG, 16348);
+
+// Producer will wait for more records to group in one batch, before sending requests
+props.put(ProducerConfig.LINGER_MS_CONFIG, 1);
+
+props.put(ProducerConfig.BUFFER_MEMORY_CONFIG, 33554432);
+props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+
+props.put("security.protocol", "SASL_SSL");
+props.put("sasl.mechanism", "SCRAM-SHA-512");
+props.put("sasl.jaas.config", jaasConfig);
+
+Producer<String, String> producer = new KafkaProducer<String, String>(props);
+
+
+```
+
+
 ### start the zookeeper
 ```
 bin/zookeeper-server-start.sh config/zookeeper.properties
