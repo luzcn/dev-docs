@@ -91,7 +91,19 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --f
 
 ### alter topic retention time
 ```
+
+## deprecated
 kafka-topics.sh --zookeeper localhost:2181 --alter --topic test --config retention.ms=1000
+
+
+### use kafak-configs
+
+kafka-configs --zookeeper localhost:2181 --entity-type topics --alter --add-config retention.ms=1000 --entity-name <<Topic Name>>
+
+### Configurations set via this method can be displayed with the command
+
+kafka-configs --zookeeper localhost:2181 --entity-type topics --describe --entity-name <<Topic Name>>
+
 ```
 
 ### List the topics to which the group is subscribed
