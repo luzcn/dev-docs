@@ -1,3 +1,33 @@
+### Java simpleDateTime
+
+#### Format current milliseconds time to ISO 8601 Timezone
+1. Use this pattern and do not set timezone, will generate 3 digit timezone offset 
+```java
+ SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+// dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+String time = dateFormat.format((new Date()).getTime());
+System.out.println(time);
+```
+the output time would be "2018-12-07T11:53:29.598-08:00"
+
+2. Set the timezone, to UTC or GMT, the format will generate 'Z' afterwards, indicate zero-offset timezone
+```java
+SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+String time = dateFormat.format((new Date()).getTime());
+System.out.println(time);
+```
+This will output time "2018-12-07T19:58:42.102Z"
+
+
+#### parse the time String to Date
+```java
+ Date date = dateFormat.parse("2018-06-22T10:30:06.000Z");
+ System.out.println(date);
+```
+This will output "Fri Jun 22 03:30:06 PDT 2018"
+
+---
 ### Java String
 
 #### convert "List of Character" to String
