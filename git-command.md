@@ -68,6 +68,10 @@ Or, you can simpley use `-<number>` to display the latest `<number>` commits.
 ```
 git log --oneline -2
 ```
+- Display the log of a single file
+```
+git log --follow -p <file name>
+```
 
 ### git checkout
 You can use `git checkout` to change your code back to a previous commit, it will detach your `HEAD` and remove the commits.
