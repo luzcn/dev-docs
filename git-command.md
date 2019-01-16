@@ -49,6 +49,26 @@ git fetch --all
 git reset --hard origin/<branch_name> ;; not need the <branch_name> if reset from the upstream remote
 ```
 
+**Important: If you have any local changes, they will be lost. With or without --hard option, any local commits that haven't been pushed will be lost.[*]
+If you have any files that are not tracked by Git (e.g. uploaded user content), these files will not be affected.**
+
+
+```
+git fetch --all
+```
+Then, you have two options:
+```
+git reset --hard origin/master
+```
+OR If you are on some other branch:
+```
+git reset --hard origin/<branch_name>
+```
+Explanation:
+git fetch downloads the latest from remote without trying to merge or rebase anything.
+
+Then the git reset resets the master branch to what you just fetched. The `--hard` option changes all the files in your working tree to match the files in origin/master
+
 ### git delete remote branch
 ```
 git push origin --delete <branch_name>
