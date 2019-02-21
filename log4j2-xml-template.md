@@ -81,3 +81,32 @@
   </Loggers>
 </Configuration>
 ```
+
+
+### Use MDC
+```
+# https://logging.apache.org/log4j/2.x/manual/configuration.html#ConfigurationSyntax
+name = LoggerConfig
+
+# https://logging.apache.org/log4j/2.x/manual/appenders.html#ConsoleAppender
+# https://logging.apache.org/log4j/2.x/manual/layouts.html#PatternLayout
+appender.stdout.type = Console
+appender.stdout.name = STDOUT
+appender.stdout.layout.type = PatternLayout
+appender.stdout.layout.pattern = %level | %msg%n
+
+appender.stdout_mdc.type = Console
+appender.stdout_mdc.name = STDOUT_MDC
+appender.stdout_mdc.layout.type = PatternLayout
+appender.stdout_mdc.layout.pattern = %level | eventId=%mdc{eventId} correlationId=%mdc{correlationId} entityId=%mdc{entityId} eventName=%mdc{eventName} sources=%mdc{sources} facilityId=%mdc{facilityId} | %msg%n
+
+# https://logging.apache.org/log4j/2.x/manual/configuration.html#Properties
+logger.nordstrom.name = com.nordstrom
+logger.nordstrom.level = info
+logger.nordstrom.additivity = false
+logger.nordstrom.appenderRef.stdout.ref = STDOUT_MDC
+
+# https://stackoverflow.com/a/23877814/1429373
+rootLogger.level = INFO
+rootLogger.appenderRef.stdout.ref = STDOUT
+```
