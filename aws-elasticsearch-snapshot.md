@@ -57,3 +57,5 @@ function indexDocument(document) {
   });
 }
 ```
+
+3. run `curl -XPUT https://search-fdt-elasticsearch-domain-be6isgtin2xyplxyv7lcjt4xga.us-west-2.es.amazonaws.com/_snapshot/fdt-snapshot-repo/fdt-inv-snapshot` to manually take a snapshot
