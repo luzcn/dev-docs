@@ -30,6 +30,13 @@ This will output "Fri Jun 22 03:30:06 PDT 2018"
 ---
 ### Java String
 
+#### Convert `List<String>` to `String[]`
+```java
+List<String> s = new ArrayList<>();
+String[] res = s.toArray(String[]::new);
+```
+ 
+
 #### convert "List of Character" to String
 ```java
 List<Character> res = new ArrayList<>();
@@ -134,10 +141,14 @@ boolean find(int[] nums, int target){
   // or use noneMatch
   // Arrays.stream(nums).noneMatch(x -> x == target);
 }
-
-
-
 ```
+
+#### Convert `List<Integer>` to `int[]`
+```java
+List<Integer> nums = new ArrayList<>();
+nums.stream().mapToInt(x->x).toArray();
+```
+
 #### Java8 method reference
 ```java
 List<Integer> nums = Arrays.asList(1, 22, 13, 84, 19);
