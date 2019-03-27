@@ -106,6 +106,21 @@ Arrays.stream(nums).max().ifPresent(System.out::println);
 IntStream.of(1, 2, 3, 4).max().ifPresent(System.out::println);
 ```
 
+#### Java various length 2D array
+```java
+int[][] nums = {{1, 2, 3}, null, {3, 4, 51}, {1}, {12, 23, 324, 4356, 123445}};
+
+for (int[] v : nums) {
+  if (v == null) {
+    continue;
+  }
+
+  Arrays.stream(v).forEach(x -> System.out.print(x + " "));
+  System.out.println();
+}
+```
+
+
 #### use lambda to print 2d array
 ```java
 int[][] board = new int[][]{
