@@ -1,3 +1,14 @@
+### Docker + Kubernetes
+``` bash
+kubectl config use-context docker-for-desktop
+
+# get k8s cluster info
+kubectl cluster-info
+
+# review current context
+kubectl config current-context
+```
+
 ### Show Merged kubeconfig settings.
 ```sh
 kubectl config view 
