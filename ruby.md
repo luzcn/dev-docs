@@ -22,7 +22,25 @@ class Customer
       @cust_name = name
       @cust_addr = addr
    end
+   
+   # instance method
+   def get_name
+      @cust_name
+   end
+   
+   def set_name = (name)
+      @cust_name=name
+   end
+   
+   # class method
+   def self.name 
+      @cust_name
+   end
 end
+
+
+# use class method
+Customer.name
 
 
 # create objects
