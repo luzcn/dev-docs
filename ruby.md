@@ -33,11 +33,6 @@ class Customer
    end
 end
 
-
-# use class method
-Customer.name
-
-
 # create objects
 cust1 = Customer.new("1", "John", "Wisdom Apartments, Ludhiya")
 cust2 = Customer.new("2", "Poul", "New Empire road, Khandala")
@@ -69,6 +64,8 @@ class Box
       @@count += 1
    end
 
+
+    # define class method, simlar to static method in java
    def self.printCount()
       puts "Box count is : #@@count"
    end
