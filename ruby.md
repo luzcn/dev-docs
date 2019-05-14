@@ -52,7 +52,7 @@ obj = Sample.new
 obj.hello
 ```
 
-## define and use class method 
+## Define and use class method 
 ```ruby
 class Box
    # Initialize our class variables
@@ -79,6 +79,40 @@ box2 = Box.new(30, 100)
 Box.printCount()
 ```
 
+## Inheritence and override
+basic sytax: `class name < superclass`
+```
+# define a class
+class Box
+   # constructor method
+   def initialize(w,h)
+      @width, @height = w, h
+   end
+   # instance method
+   def getArea
+      @width * @height
+   end
+end
+
+# define a subclass
+class BigBox < Box
+
+   # change existing getArea method as follows
+   def getArea
+      @area = @width * @height
+      puts "Big box area is : #@area"
+   end
+end
+
+# create an object
+box = BigBox.new(10, 20)
+
+# print the area using overriden method.
+box.getArea()
+
+```
+
+# Ruby datastructure and operator
 ## array
 ```ruby
 ary = ["my name", 10, 3.14, "this is a string", "last element"]
@@ -136,7 +170,7 @@ for i in 0..5
    puts "Value of local variable is #{i}"
 end
 ```
-# `if` modifier
+## `if` modifier
 the basic syntax `code if condition`, equivelent ot `if condition code end` block
 ```
 $debug = true
