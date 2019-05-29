@@ -1,4 +1,4 @@
-# Define Ruby class
+## Define Ruby class
 ```ruby
 class Customer
     # Instance varialbe
@@ -181,3 +181,42 @@ if $debug
     print "debug\n"
 end
 ```
+
+## Ruby symbols
+A Ruby symbol is not a variable because it cannot be assigned a value.
+Also, a Ruby symbol is not a reference to another variable nor is it a pointer to a memory location.
+```ruby
+# It is trivial to assign a value to a variable.
+abc = "1"
+=> "1"
+ 
+# But a symbol cannot be assigned any value.
+:a = "1"
+# SyntaxError: A symbol cannot be assigned a value
+ 
+# Can use a variable as a map-key (You know already)
+m = {abc => "1"}
+=> {"1"=>"1"}
+
+# Can use a string as a map-key (You know already)
+m = {"def" => "1"}
+=> {"def"=>"1"}
+
+# Can also use a symbol as a map-key (Most common use case)
+m = {:a => "1"}
+=> {:a=>"1"}
+ 
+# Can use same symbol as key in another map
+m2 = {:a => "2"}
+=> {:a=>"2"}
+
+# And it won't affect the previous map.
+m
+=> {:a=>"1"}
+ 
+m2
+=> {:a=>"2"}
+
+
+```
+
