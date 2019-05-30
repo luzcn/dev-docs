@@ -228,3 +228,28 @@ if (a == null) {
   a = b;
  }
 ```
+
+## pass key-value parameters
+```
+module Test
+    class Client
+        def get_user
+            request(
+                method: :get,
+                expects: 200
+            )
+        end
+
+
+        def request(options) 
+            print options
+        end
+        
+    end
+
+    client = Client.new
+    client.get_user
+    
+    # => {:method=>:get, :expects=>200}
+end
+```
