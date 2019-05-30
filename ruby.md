@@ -230,7 +230,7 @@ if (a == null) {
 ```
 
 ## pass key-value parameters
-```
+```ruby
 module Test
     class Client
         def get_user
