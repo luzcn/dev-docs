@@ -220,7 +220,8 @@ m2
 ```
 
 ## ||= (Double Pipe / Or Equals) 
-In Ruby, we can use `||=` passing reference to assign a variable if it is `nil`
+In Ruby, we can use `||=` passing reference to assign a variable if it is `nil`.
+
 `a ||= b` is translated to 
 ```java
 if (a == null) {
