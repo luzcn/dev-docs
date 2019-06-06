@@ -319,3 +319,19 @@ end
 yield_without_block 
 #=> no error
 ```
+
+## yield with arguments
+yield can take a list of arguments that will be available for the block
+```ruby
+def yield_with_args
+  hello = 'Hello'
+  world = 'World!'
+
+  yield(hello, world)
+end
+
+yield_with_args do |h, w|
+  puts "#{h}"
+  puts "#{w}"
+end
+```
