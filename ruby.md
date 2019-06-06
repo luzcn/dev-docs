@@ -262,3 +262,24 @@ module Test
     # => {:method=>:get, :expects=>200}
 end
 ```
+
+# Ruby yield and blocks
+the `yield` keyword means we will define/add more actions for this data object later.
+```ruby
+class Array
+
+  def iterate!
+    self.each_with_index do |n, i|
+      self[i] = yield(n)
+    end
+  end
+end
+
+arr = [1,2,3,4]
+
+arr.iterate! do |n|
+  n**2
+end
+
+puts arr.inspect
+```
