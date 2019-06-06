@@ -321,7 +321,7 @@ yield_without_block
 ```
 
 ## yield with arguments
-yield can take a list of arguments that will be available for the block
+`yield` can take a list of arguments that will be available for the block
 ```ruby
 def yield_with_args
   hello = 'Hello'
@@ -333,5 +333,20 @@ end
 yield_with_args do |h, w|
   puts "#{h}"
   puts "#{w}"
+end
+```
+
+## yield with return value
+We can use `yield` to get the return value of a block and assign it to a variable.
+```ruby
+def yield_with_return_value
+  n = 10
+  x = yield(n)
+
+  puts x
+end
+
+yield_with_return_value do |n|
+  n * 2
 end
 ```
