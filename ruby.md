@@ -283,3 +283,39 @@ end
 
 puts arr.inspect
 ```
+
+## define multiple yield 
+```ruby
+def one_yield
+  yield
+end
+
+def multi_yield
+    yield
+    yield
+end
+  
+
+one_yield do 
+  puts "123"
+end
+# => 123
+
+multi_yield {
+  puts "abc"
+}
+# => abc
+# => abc
+# the block will be executed twice.
+
+```
+
+## define yield only if block is given
+```ruby
+def yield_without_block
+    yield if block_given?
+end
+
+yield_without_block 
+#=> no error
+```
