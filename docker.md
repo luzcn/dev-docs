@@ -1,3 +1,12 @@
+```sh
+# build the docker image from Dockerfile
+docker build --tag <image name> .
+
+# run the containter in interative mode
+docker run -ti <image name> /bin/bash
+```
+
+
 ### check what ports are already in use
 ```
 netstat -tunlp
