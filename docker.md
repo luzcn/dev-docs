@@ -1,3 +1,27 @@
+### docker file of customized ubuntu
+```
+FROM ubuntu
+
+RUN apt-get update \
+  && apt-get install -y python3-pip python3-dev automake libtool make gcc git libjansson-dev libmagic-dev \
+  && cd /usr/local/bin \
+  && ln -s /usr/bin/python3 python \
+  && pip3 install --upgrade pip
+
+RUN mkdir /app
+WORKDIR /app
+ENV LC_ALL=C.UTF-8
+
+# Install yara-python and ssdeep
+RUN pip install yara-python
+RUN apt-get install -y build-essential libffi-dev python3 python3-dev python3-pip libfuzzy-dev
+RUN pip install ssdeep
+
+CMD python
+```
+
+
+### docker build and run
 ```sh
 # build the docker image from Dockerfile
 docker build --tag <image name> .
