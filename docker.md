@@ -1,25 +1,24 @@
 ### docker file of customized ubuntu
 ```
-FROM ubuntu
+FROM ubuntu:latest
 
-RUN apt-get update \
-  && apt-get install -y python3-pip python3-dev automake libtool make gcc git libjansson-dev libmagic-dev \
-  && cd /usr/local/bin \
-  && ln -s /usr/bin/python3 python \
-  && pip3 install --upgrade pip
+RUN apt-get update && apt-get install -y python3-pip python3 \
+  build-essential libffi-dev python3-dev libfuzzy-dev libssl-dev
+
+# link python to python3
+RUN ln -s /usr/bin/python3 /usr/bin/python
+
+# install required yara and ssdeep libs
+RUN pip3 install --upgrade yara-python requests ssdeep
 
 RUN mkdir /app
 WORKDIR /app
-ENV LC_ALL=C.UTF-8
 
-# Install yara-python and ssdeep
-RUN pip install yara-python
-RUN apt-get install -y build-essential libffi-dev python3 python3-dev python3-pip libfuzzy-dev
-RUN pip install ssdeep
+# set localization
+ENV LC_ALL=C.UTF-8
 
 CMD python
 ```
-
 
 ### docker build and run
 ```sh
@@ -28,8 +27,16 @@ docker build --tag <image name> .
 
 # run the containter in interative mode
 docker run -ti <image name> /bin/bash
+
+# for example 
+docker run -ti --name os -v ~/project/heroku/sleuth/sleuth-codescan-agent:/app my-ubuntu /bin/bash
 ```
 
+### push to docker hub
+1. use `docker images` to list the docker images, get the image id that you want to push
+2. `docker tag <id> luzcn/<image name>`
+3. `docker login`, login with dockerhub username/password
+4. `docker push`
 
 ### check what ports are already in use
 ```
