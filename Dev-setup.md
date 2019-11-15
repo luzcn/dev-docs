@@ -73,7 +73,8 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git
+zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -117,14 +118,14 @@ alias cdp="cd ~/projects/console"
 
 
 # bash completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  source $(brew --prefix)/etc/bash_completion.d
-fi
+# if [ -f $(brew --prefix)/etc/bash_completion ]; then
+#  source $(brew --prefix)/etc/bash_completion.d
+# fi
  
-source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
+# source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
 
 # zsh-syntax-highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ```
 
