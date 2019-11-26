@@ -44,6 +44,18 @@ alias mciskipall="mvn clean install -DskipTests -Dcheckstyle.skip=true -Dfindbug
 
 ### cd project alias
 alias cdp="cd ~/projects/console"
+alias gs="git status"
+alias cdg="cd /Users/zheng.lu/project/go/src"
+alias h="heroku"
+alias hsu="heroku sudo"
+alias python="/usr/local/bin/python3"
+alias pip="/usr/local/bin/pip3"
+
+
+# display timestamp for each command
+RPROMPT='[%D{%L:%M:%S %p}]'
+
+export GOPATH=$HOME/project/go
 ```
 
 ### install zsh-syntax-highlighter
