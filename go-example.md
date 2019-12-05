@@ -1,5 +1,35 @@
 ## Go Examples
 
+### Sample code using kingpin for CLI interface
+```go
+package main
+
+import (
+	"fmt"
+	"gopkg.in/alecthomas/kingpin.v2"
+	"os"
+)
+
+var app = kingpin.New("go-db", "CLI for database management")
+var version = app.Version("0.0.1")
+
+var (
+	migrateCmd = app.Command("migrate", "Run database migrations")
+)
+
+func main() {
+	switch kingpin.MustParse(app.Parse(os.Args[1:])) {
+	case migrateCmd.FullCommand():
+		fmt.Println("Migrate")
+	default:
+		fmt.Println(`unknown command, please use "go-db --help"`)
+	}
+}
+```
+
+
+
+
 ### create a slice of slice 
 ```go
 // similar to java List<List<Integer>> x = new ArrayList<>()
