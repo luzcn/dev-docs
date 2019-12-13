@@ -63,6 +63,32 @@ func main() {
 
 ```
 
+### Use scanner read file line by line
+```go
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+func main() {
+	file, err := os.Open("./README.md")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	// read line by line
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		fmt.Println(scanner.Text())
+	}
+
+	if err := scanner.Err(); err != nil {
+		fmt.Fprintln(os.Stderr, "reading standard input: ", err)
+	}
+}
+```
 
 ### create a slice of slice 
 ```go
