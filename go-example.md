@@ -28,6 +28,40 @@ func main() {
 ```
 
 
+## Basic 
+
+
+### Read files
+```go
+package main
+
+import (
+	"os"
+)
+
+func main() {
+	buf := make([]byte, 1024)
+	f, e := os.Open("./README.md")
+	if e != nil {
+		panic(e)
+	}
+
+	for {
+		n, e := f.Read(buf)
+		if n == 0 {
+			break
+		}
+		if e != nil {
+			panic(e)
+		}
+
+		os.Stdout.Write(buf[:n])
+	}
+
+	f.Close()
+}
+
+```
 
 
 ### create a slice of slice 
