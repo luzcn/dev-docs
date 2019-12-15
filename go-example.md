@@ -38,6 +38,50 @@ func main() {
 }
 ```
 
+### go routing and channel
+```go
+package main
+
+import "fmt"
+
+func calcSqure(number int, res chan int) {
+
+	sum := 0
+	for number != 0 {
+		digit := number % 10
+		sum += digit * digit
+		number /= 10
+	}
+
+	res <- sum
+}
+
+func calcCube(number int, res chan int) {
+	sum := 0
+	for number != 0 {
+		digit := number % 10
+		sum += digit * digit * digit
+		number /= 10
+	}
+
+	// write to channel
+	res <- sum
+}
+
+func main() {
+
+	var squreChan = make(chan int)
+	var cubeChan = make(chan int)
+	var num = 589
+
+	go calcSqure(num, squreChan)
+	go calcCube(num, cubeChan)
+
+	// read from channel
+	res1, res2 := <-squreChan, <-cubeChan
+	fmt.Println(res1 + res2)
+}
+```
 
 ## Basic 
 
