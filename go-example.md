@@ -93,7 +93,7 @@ func main() {
 ### create a slice of slice 
 ```go
 // similar to java List<List<Integer>> x = new ArrayList<>()
-x := make([][]int, 0)
+x := [][]int{}
 
 x = append(x, []int{1, 24, 4})
 x = append(x, []int{1, 2})
