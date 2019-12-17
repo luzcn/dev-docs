@@ -145,6 +145,63 @@ func main() {
 }
 ```
 
+### use interface
+`interface` is a named collection of method signatures. 
+To implement an interface in Go, we just need to implement all the methods in the interface
+
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+// A basic interface for geometric shapes
+type geometry interface {
+	area() float64
+	perimeter() float64
+}
+
+type rectangle struct {
+	height float64
+	width  float64
+}
+
+type circle struct {
+	radius float64
+}
+
+// implement the "gemoetry" interface ("area" and "perimeter" methods) for type rectangle
+func (rec rectangle) area() float64 {
+	return rec.width * rec.height
+}
+func (rec rectangle) perimeter() float64 {
+	return 2*rec.width + 2*rec.height
+}
+
+// implement the "gemoetry" interface ("area" and "perimeter" methods) for type circle
+func (c circle) area() float64 {
+
+	return math.Pi * c.radius * c.radius
+}
+
+func (c circle) perimeter() float64 {
+	return 2 * math.Pi * c.radius
+}
+
+func measure(g geometry) {
+	fmt.Println(g)
+
+	fmt.Printf("The geometry area is %f\n", g.area())
+	fmt.Printf("The geometry perimeter is %f\n", g.perimeter())
+}
+
+func main() {
+	measure(rectangle{2,4})
+}
+```
+
 ### create a slice of slice 
 ```go
 // similar to java List<List<Integer>> x = new ArrayList<>()
