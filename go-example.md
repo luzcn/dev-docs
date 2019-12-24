@@ -248,6 +248,27 @@ if _,found := mp["key"]; found {
 
 ```
 
+### use `switch`
+```go
+func test() map[string]string {
+	return map[string]string{}
+}
+
+func main() {
+	var t interface{}
+
+	t = test()
+
+	switch t.(type) {
+	case bool:
+		fmt.Printf("the boolean type is %T", t)
+
+	default:
+		fmt.Printf("the interface type is %T", t)
+	}
+}
+```
+
 #### string to int, int to string
 ```go
 // string to integer
