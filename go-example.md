@@ -83,6 +83,58 @@ func main() {
 }
 ```
 
+### go routine, channels and select
+```go
+// a simple sort go routine example
+func main() {
+	x := []int{2, 4543, 6, 1, 45, 6}
+	ci := make(chan int)
+
+	go func() {
+		sort.Ints(x)
+		ci <- 1
+	}()
+
+	<-ci
+
+	fmt.Println(x)
+}
+
+
+// a simple go routing and select example
+
+func main() {
+	value := make(chan int)
+	quit := make(chan int)
+
+	go fib(value, quit)
+
+	for i := 0; i < 10; i++ {
+		// print data from value channel
+		fmt.Println(<-value)
+	}
+	// send value to quit channel
+	quit <- 0
+}
+
+func fib(c, quit chan int) {
+	x, y := 0, 1
+	for {
+		// The select statement lets a goroutine wait on multiple communication operations.
+		select {
+		// A select blocks until one of its cases can run, then it executes that case. 
+		// It chooses one at random if multiple are ready.
+		case c <- x:
+			x, y = y, x+y
+		case <-quit:
+			// when "quit" has value, exit this routine
+			fmt.Println("quit")
+			return
+		}
+	}
+}
+```
+
 ## Basic 
 
 
