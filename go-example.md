@@ -272,6 +272,40 @@ func reverse(nums []int) {
 }
 ```
 
+### rotate the slice to left n elements
+```go
+func main() {
+	nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+
+	rotateLeft(3, nums)
+	fmt.Println(nums)
+}
+
+// roatet the given nums slice left n elements
+// n is guaranteed to be valid
+func rotateLeft(n int, nums []int) {
+	if n > len(nums) {
+		return
+	}
+
+	// reverse the first n elements
+	// e.g. n is 3 => 3,2,1,4,5,6,7,8,9,10,11,12
+	reverse(nums[:n])
+
+	// reverse the rest elements
+	reverse(nums[n:])
+
+	// reverse entire slice
+	reverse(nums)
+}
+
+func reverse(nums []int) {
+	for i, j := 0, len(nums)-1; i < j; i, j = i+1, j-1 {
+		nums[i], nums[j] = nums[j], nums[i]
+	}
+}
+```
+
 ### `for` loop
 ```go
 // while loop
