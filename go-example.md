@@ -263,6 +263,15 @@ x = append(x, []int{1, 24, 4})
 x = append(x, []int{1, 2})
 ```
 
+### reverse a slice
+```go
+func reverse(nums []int) {
+	for i, j := 0, len(nums)-1; i < j; i, j = i+1, j-1 {
+		nums[i], nums[j] = nums[j], nums[i]
+	}
+}
+```
+
 ### `for` loop
 ```go
 // while loop
