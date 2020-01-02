@@ -1,0 +1,58 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Code Scan API
+host: petstore.swagger.io
+basePath: /v1
+tags:
+  - name: CodeScan
+schemes:
+  - https
+  - http
+paths:
+  /app:
+    post:
+      tags:
+        - App
+      summary: Add a new app to the DB
+      description: ''
+      operationId: createApp
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: App object that needs to be added to the DB
+          required: true
+          schema:
+            $ref: '#/definitions/App'
+            
+      responses:
+        '200':
+          description: Success
+        '405':
+          description: Invalid input
+definitions:
+  App:
+    type: object
+    properties:
+      id:
+        type: string
+      releases:
+        type: array
+        items:
+          $ref: '#/definitions/Release'
+  Release:
+    type: object
+    properties:
+      id:
+        type: string
+      slug:
+        $ref: '#/definitions/Slug'
+  Slug:
+    type: object
+    properties:
+      id:
+        type: string
