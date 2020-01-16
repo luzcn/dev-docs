@@ -11,6 +11,35 @@
 
 ## Go Examples
 
+### Decode/Encode JSON 
+1. Decode a JSON string to arbitrary objects and arrays
+
+Sometimes, we need to process data whose structure or property names that are not certain of, we cannot use structs to unmarshal the data. Instead we can use maps. 
+
+The encoding/json package uses
+
+  - map[string]interface{} to store arbitrary JSON objects, and
+[]interface{} to store arbitrary JSON arrays.
+- It will unmarshal any valid JSON data into a plain interface{} value.
+
+```go
+birdJson := `{"birds":{"pigeon":"likes to perch on rocks","eagle":"bird of prey"},"animals":"none"}`
+var result map[string]interface{}
+json.Unmarshal([]byte(birdJson), &result)
+
+// The object stored in the "birds" key is also stored as 
+// a map[string]interface{} type, and its type is asserted from
+// the interface{} type
+birds := result["birds"].(map[string]interface{})
+
+for key, value := range birds {
+  // Each value is an interface{} type, that is type asserted as a string
+  fmt.Println(key, value.(string))
+}
+```
+
+
+
 ### Sample code using kingpin for CLI interface
 ```go
 package main
