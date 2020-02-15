@@ -28,3 +28,7 @@ SHOW search_path;
 SELECT pg_size_pretty( pg_database_size('<db name>') );
 
 ```
+
+### SQL Join Venn diagram
+![Image of Yaktocat](https://i.stack.imgur.com/UI25E.jpg)
+
