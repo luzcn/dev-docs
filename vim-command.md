@@ -4,6 +4,7 @@
 - `diw` to delete in the word (doesn't include spaces)
 - `daw` to delete around the word (includes spaces before the next word).
 - `dd` delete the entire line.
+- `D` delete from the current cursor to the end of line.
 - `u` undo
 
 #### Copy/Cut and paste:
@@ -29,6 +30,7 @@ l   move one character right
 w   move to beginning of next word
 b   move to previous beginning of word
 e   move to end of word
+$   move to the end of line
 
 Ctrl-D  move half-page down
 Ctrl-U  move half-page up
