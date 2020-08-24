@@ -82,3 +82,12 @@ public class PrestoQueryStatus {
 }
 
 ```
+
+- Use this pattern
+```java
+PrestoQueryStatus queryInfo = new PrestoQueryStatus.Builder(queryCreatedEvent.getMetadata().getQueryId())
+                .queryState(queryCreatedEvent.getMetadata().getQueryState())
+                .user(queryCreatedEvent.getContext().getUser())
+                .createTime(queryCreatedEvent.getCreateTime())
+                .build();
+```
