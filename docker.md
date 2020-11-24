@@ -88,3 +88,9 @@ docker rmi $(docker images -a -q)
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 ```
+
+### Get docker file from docker image
+```
+alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm alpine/dfimage"
+dfimage -sV=1.36 nginx:latest
+```
